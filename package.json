@@ -1,0 +1,48 @@
+{
+  "name": "personal-portfolio",
+  "version": "2.0.0",
+  "description": "Modern personal portfolio with React, dark mode, and i18n",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "server": "npx kill-port 5000 && node server.cjs",
+    "server:dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "@react-three/drei": "^9.86.16",
+    "@react-three/fiber": "^8.15.0",
+    "axios": "^1.6.2",
+    "framer-motion": "^10.18.0",
+    "i18next": "^23.7.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-i18next": "^13.5.0",
+    "react-intersection-observer": "^9.5.3",
+    "react-scroll": "^1.8.10",
+    "three": "^0.160.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.4.0",
+    "vite": "^5.0.0"
+  },
+  "optionalDependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "nodemailer": "^6.9.6",
+    "nodemon": "^3.0.1"
+  },
+  "keywords": [
+    "portfolio",
+    "react",
+    "dark-mode",
+    "i18n"
+  ],
+  "author": "",
+  "license": "ISC"
+}

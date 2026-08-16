@@ -1,0 +1,188 @@
+{
+  "en": {
+    "certificates": {
+      "title": "Certificates & Achievements",
+      "description": "Professional certifications and credentials I've earned",
+      "items": [
+        {
+          "id": 7,
+          "name": "Version Control",
+          "issuer": "Meta",
+          "date": "August 2026",
+          "category": "Web Development",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/records/GIFOP9BNV5HU",
+          "icon": "🐙",
+          "color": "from-purple-600 to-indigo-600",
+          "description": "Linux, Git, GitHub, branch management, and team collaboration workflows."
+        },
+                
+        {
+          "id": 1,
+          "name": "Introduction to Front-End",
+          "issuer": "Meta",
+          "date": "August 2026",
+          "category": "Cloud",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/records/YXMRJARU2CJC",
+          "icon": "☁️",
+          "color": "from-orange-500 via-red-500 to-pink-600",
+          "description": "including HTML5, CSS3, Bootstrap, UI design, responsive web layouts, and an introduction to React and modern web development."
+        },
+        {
+          "id": 2,
+          "name": "JavaScript",
+          "issuer": "Meta",
+          "date": "August 2026",
+          "category": "JavaScript",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/records/M6ZYP1NTV55E",
+          "icon": "🌐",
+          "color": "from-green-500 to-emerald-500",
+          "description": "Advanced JavaScript ES6+ concepts, DOM manipulation, unit testing with Jest, asynchronous programming, and OOP practices."
+        },
+        {
+          "id": 3,
+          "name": "JavaScript Mastery",
+          "issuer": "Coursera",
+          "date": "January 2024",
+          "category": "JavaScript",
+          "credentialUrl": "#",
+          "icon": "📝",
+          "color": "from-yellow-500 to-orange-500",
+          "description": "Advanced JavaScript ES6+ concepts and best practices"
+        },
+        {
+          "id": 4,
+          "name": "UI/UX Design Fundamentals",
+          "issuer": "Interaction Design Foundation",
+          "date": "November 2023",
+          "category": "Design",
+          "credentialUrl": "#",
+          "icon": "🎨",
+          "color": "from-purple-500 to-pink-500",
+          "description": "User interface and user experience design principles"
+        },
+        {
+          "id": 5,
+          "name": "Node.js Backend Development",
+          "issuer": "LinkedIn Learning",
+          "date": "September 2023",
+          "category": "Backend",
+          "credentialUrl": "#",
+          "icon": "🚀",
+          "color": "from-green-600 to-teal-600",
+          "description": "Backend development with Node.js and Express"
+        },
+        {
+          "id": 6,
+          "name": "AWS Cloud Practitioner",
+          "issuer": "Amazon Web Services",
+          "date": "July 2023",
+          "category": "Cloud",
+          "credentialUrl": "#",
+          "icon": "☁️",
+          "color": "from-orange-500 to-red-500",
+          "description": "AWS cloud fundamentals and deployment practices"
+        },
+        {
+          "id": 7,
+          "name": "AWS Cloud Practitioner",
+          "issuer": "Amazon Web Services",
+          "date": "July 2023",
+          "category": "Cloud",
+          "credentialUrl": "#",
+          "icon": "☁️",
+          "color": "from-orange-500 to-red-500",
+          "description": "AWS cloud fundamentals and deployment practices"
+        }
+      ],
+      "categories": ["All", "React", "JavaScript", "Web Development", "Design", "Backend", "Cloud"]
+    }
+  },
+  "ar": {
+    "certificates": {
+      "title": "الشهادات والإنجازات",
+      "description": "الشهادات المهنية والأوراق الاعتمادية التي حصلت عليها",
+      "items": [
+        [
+        {
+          "id": 1,
+          "name": "مقدمة في تطوير الواجهات الأمامية",
+          "issuer": "Meta",
+          "date": "أغسطس 2026",
+          "category": "تطوير الويب",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/records/YXMRJARU2CJC",
+          "icon": "☁️",
+          "color": "from-orange-500 via-pink-500 to-rose-600",
+          "description": "أساسيات تطوير الواجهات الأمامية وتتضمن HTML5 وCSS3 وBootstrap، مبادئ تصميم الواجهات، التصميم المتجاوب، ومقدمة في React وتطوير الويب الحديث."
+        },
+        {
+          "id": 2,
+          "name": "JavaScript",
+          "issuer": "Meta",
+          "date": "أغسطس 2026",
+          "category": "جافاسكريبت",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/records/M6ZYP1NTV55E",
+          "icon": "📝",
+          "color": "from-amber-500 via-orange-500 to-red-500",
+          "description": "إتقان مفاهيم JavaScript وES6+ المتقدمة، التعامل مع الـ DOM، اختبار الوحدات باستعمال Jest، والبرمجة غير المتزامنة."
+        },
+        {
+          "id": 3,
+          "name": "التحكم في الإصدارات (Version Control)",
+          "issuer": "Meta",
+          "date": "أغسطس 2026",
+          "category": "تطوير الويب",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/records/GIFOP9BNV5HU",
+          "icon": "🐙",
+          "color": "from-purple-600 via-indigo-600 to-blue-600",
+          "description": "نظام Linux، Git، GitHub، إدارة الفروع (Branches)، وسير العمل الجماعي للفرق."
+        },
+        {
+          "id": 4,
+          "name": "تعمق في HTML و CSS",
+          "issuer": "Meta",
+          "date": "أغسطس 2026",
+          "category": "رياكت",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/records/YXMRJARU2CJC",
+          "icon": "⚛️",
+          "color": "from-cyan-500 via-blue-500 to-indigo-600",
+          "description": "تقنيات تخطيط الويب المتقدمة بـ HTML5 وCSS3، إطار العمل Bootstrap، استخدام Flexbox وCSS Grid، التصميم المتجاوب، وإتاحة الويب (WCAG)."
+        },
+        {
+          "id": 5,
+          "name": "React Now",
+          "issuer": "Frontend Masters",
+          "date": "أغسطس 2026",
+          "category": "رياكت",
+          "icon": "⚛️",
+          "color": "from-blue-500 via-sky-500 to-cyan-500",
+          "description": "أنماط React المتقدمة، Custom Hooks، تحسين الأداء، وأفضل ممارسات إدارة حالة التطبيق (State Management)."
+        },
+        {
+          "id": 6,
+          "name": "البرمجة بلغة بليثون",
+          "issuer": "Mahara-Tech",
+          "date": "فبراير 2026",
+          "category": "تطوير الويب",
+          "credentialUrl": "https://maharatech.gov.eg/mod/customcert/verify_certificate.php?",
+          "icon": "🌐",
+          "color": "from-emerald-500 via-teal-500 to-green-600",
+          "description": "البرمجة الهيكلية، البرمجة كائنية التوجه (OOP)، الخوارزميات، وهياكل البيانات."
+        },
+        {
+          "id": 7,
+          "name": "ما هو الابتكار؟",
+          "issuer": "Arizona State University",
+          "date": "مارس 2026",
+          "category": "الابتكار",
+          "credentialUrl": "https://poweredby.asu.edu/validate-credentials/?token=d1703266-747a-4352-bb08-435c5a1d0a5f&email=ayz304333@gu.edu.eg",
+          "icon": "🎨",
+          "color": "from-fuchsia-500 via-purple-500 to-pink-600",
+          "description": "استراتيجيات الابتكار، التفكير التصميمي، حل المشكلات، وتطوير الحلول الإبداعية."
+        }
+      ]
+        
+      ],
+      "categories": ["الكل", "React", "JavaScript", "Web Development", "Design", "Backend", "Cloud"]
+    }
+  }
+}

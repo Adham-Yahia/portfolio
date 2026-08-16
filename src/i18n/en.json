@@ -1,0 +1,75 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "portfolio": "Work",
+    "contact": "Contact",
+    "toggleTheme": "Toggle Theme",
+    "toggleLanguage": "Arabic"
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "name": "Adham Yahya",
+    "title": "AI Engineer & Full-Stack Web Developer",
+    "description": "Engineering intelligent AI applications and modern full-stack web solutions.",
+    "cta": "Get In Touch",
+    "scroll": "Scroll to explore"
+  },
+  "about": {
+    "title": "About Me",
+    "description1": "I'm a Computer Science student majoring in Artificial Intelligence, passionate about bringing machine intelligence to life through Full-Stack Web Development. I specialize in engineering end-to-end applications—building robust backends, responsive modern frontends, and seamlessly integrating smart AI models into them.",
+    "description2": "From training Machine Learning models in Python to architecting scalable RESTful APIs with Node.js/Express and crafting seamless user interfaces, I focus on building high-performance, data-driven digital solutions that deliver real-world impact.",
+    "skills": "Skills",
+    "skillList": ["React", "JavaScript", "Node.js", "UI/UX Design", "Responsive Design", "Web Performance", "TypeScript", "Tailwind CSS"]
+  },
+  "portfolio": {
+    "title": "Featured Work",
+    "projects": [
+      {
+        "id": 1,
+        "name": "Modern Dashboard",
+        "description": "A responsive admin dashboard built with React and modern UI principles. Features real-time data visualization and user management.",
+        "tags": ["React", "JavaScript", "UI Design"]
+      },
+      {
+        "id": 2,
+        "name": "E-Commerce Platform",
+        "description": "Full-stack e-commerce solution with payment integration and user authentication. Built with modern technologies and best practices.",
+        "tags": ["Full Stack", "Database", "API"]
+      },
+      {
+        "id": 3,
+        "name": "AI Content Generator",
+        "description": "Machine learning-powered content generation tool with user-friendly interface and advanced customization options.",
+        "tags": ["AI", "Python", "React"]
+      }
+    ],
+    "viewProject": "View Project →"
+  },
+  "contact": {
+    "title": "Let's Connect",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "emailValue": "adhemyahia2@gmail.com",
+    "phoneValue": "+20 101 480 4695",
+    "locationValue": "Cairo, Egypt",
+    "form": {
+      "name": "Your Name",
+      "email": "Your Email",
+      "message": "Your Message",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent successfully! We'll get back to you soon.",
+      "error": "Error sending message. Please try again."
+    }
+  },
+  "footer": {
+    "copyright": "© 2026 Adham Yahia. All rights reserved.",
+    "social": {
+      "twitter": "Twitter",
+      "linkedin": "LinkedIn",
+      "github": "GitHub"
+    }
+  }
+}
