@@ -68,7 +68,7 @@ export const Certificates = () => {
       issuer: 'Meta',
       date: 'August 2026',
       category: ['Web Development','Frontend'],
-      credentialId: 'FEM-2024-001',
+      credentialId: '3IFVIKW2LTK3',
       credentialUrl: 'https://www.coursera.org/account/accomplishments/records/3IFVIKW2LTK3',
       icon: '⚛️',
       color: 'from-blue-500 via-cyan-500 to-blue-600',
