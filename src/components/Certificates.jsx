@@ -64,15 +64,16 @@ export const Certificates = () => {
     },
     {
       id: 5,
-      name: 'React Now',
-      issuer: 'Frontend Masters',
+      name: 'React Basics',
+      issuer: 'Meta',
       date: 'August 2026',
       category: ['Web Development','Frontend'],
       credentialId: 'FEM-2024-001',
+      credentialUrl: 'https://www.coursera.org/account/accomplishments/records/3IFVIKW2LTK3',
       icon: '⚛️',
       color: 'from-blue-500 via-cyan-500 to-blue-600',
       bgGlow: 'bg-blue-500/20',
-      description: 'Advanced React patterns, custom hooks, performance optimization, and state management best practices'
+      description: 'Completed comprehensive training on core React concepts, including building reusable components, managing data flow using props, designing dynamic user interfaces, and handling form interactions to create scalable and responsive web applications.'
     },
     {
       id: 6,

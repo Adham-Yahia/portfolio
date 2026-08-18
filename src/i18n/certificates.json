@@ -149,13 +149,13 @@
         },
         {
           "id": 5,
-          "name": "React Now",
-          "issuer": "Frontend Masters",
+          "name": "React ",
+          "issuer": "Meta",
           "date": "أغسطس 2026",
           "category": "رياكت",
           "icon": "⚛️",
           "color": "from-blue-500 via-sky-500 to-cyan-500",
-          "description": "أنماط React المتقدمة، Custom Hooks، تحسين الأداء، وأفضل ممارسات إدارة حالة التطبيق (State Management)."
+          "description": "إتمام تدريب شامل على أساسيات رياكت (React)، وتضمن بناء مكونات قابلة لإعادة الاستخدام (Reusable Components)، إدارة تدفق البيانات عبر الـ Props، وتصميم واجهات مستخدم تفاعلية وديناميكية لتطوير تطبيقات ويب حديثة وقابلة للتوسع."
         },
         {
           "id": 6,
