@@ -7,37 +7,37 @@ export const Experience = () => {
   const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: true });
 
   const experiences = [
-    {
-      id: 1,
-      title: 'Senior Frontend Developer',
-      company: 'Tech Company Inc.',
-      duration: '2022 - Present',
-      description: 'Led development of responsive web applications using React and modern JavaScript.',
-      skills: ['React', 'TypeScript', 'Tailwind CSS'],
-      color: 'from-blue-500 to-cyan-500',
-      icon: '🚀',
-    },
-    {
-      id: 2,
-      title: 'Full Stack Developer',
-      company: 'Digital Solutions Ltd.',
-      duration: '2020 - 2022',
-      description: 'Developed and maintained full-stack applications with Node.js and React.',
-      skills: ['Node.js', 'MongoDB', 'React'],
-      color: 'from-green-500 to-emerald-500',
-      icon: '⚙️',
-    },
-    {
-      id: 3,
-      title: 'Junior Web Developer',
-      company: 'StartUp Co.',
-      duration: '2019 - 2020',
-      description: 'Collaborated with design team to implement pixel-perfect UI designs.',
-      skills: ['HTML', 'CSS', 'JavaScript'],
-      color: 'from-purple-500 to-pink-500',
-      icon: '💻',
-    },
-  ];
+      {
+        id: 1,
+        title: 'Independent Web Developer',
+        company: 'Personal Projects & Portfolios',
+        duration: '2024 - Present',
+        description: 'Designed and deployed modern, responsive web applications using React, modern JavaScript, and advanced CSS frameworks.',
+        skills: ['React', 'JavaScript', 'Tailwind CSS'],
+        color: 'from-blue-500 to-cyan-500',
+        icon: '🚀',
+      },
+      {
+        id: 2,
+        title: 'Software Engineering Student',
+        company: 'Galala University',
+        duration: '2024 - 2026',
+        description: 'Building academic and practical backend foundations, applying Object-Oriented Programming (OOP) in Python, and integrating Node.js servers.',
+        skills: ['Python', 'Node.js', 'OOP'],
+        color: 'from-green-500 to-emerald-500',
+        icon: '⚙️',
+      },
+      {
+        id: 3,
+        title: 'Certified Frontend Track',
+        company: 'Coursera & Meta Professional Tracks',
+        duration: '2025 - 2026',
+        description: 'Completed professional certification paths focusing on HTML/CSS in depth, UI principles, and Version Control workflows.',
+        skills: ['HTML/CSS', 'Git', 'UI/UX'],
+        color: 'from-purple-500 to-pink-500',
+        icon: '💻',
+      },
+    ];
 
   return (
     <section className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300" ref={ref}>
