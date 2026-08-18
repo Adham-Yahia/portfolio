@@ -27,21 +27,21 @@
     "projects": [
       {
         "id": 1,
-        "name": "Modern Dashboard",
-        "description": "A responsive admin dashboard built with React and modern UI principles. Features real-time data visualization and user management.",
-        "tags": ["React", "JavaScript", "UI Design"]
+        "name": "Little Lemon Restaurant App",
+        "description": "A responsive Mediterranean restaurant web application featuring interactive menus, semantic layouts, and optimized UI components.",
+        "tags": ["HTML/CSS", "JavaScript", "React"]
       },
       {
         "id": 2,
-        "name": "E-Commerce Platform",
-        "description": "Full-stack e-commerce solution with payment integration and user authentication. Built with modern technologies and best practices.",
-        "tags": ["Full Stack", "Database", "API"]
+        "name": "Personal Portfolio Website",
+        "description": "Modern personal portfolio built to showcase technical skills, continuous learning milestones, and deployed web apps.",
+        "tags": ["Framer Motion", "Tailwind CSS", "React"]
       },
       {
         "id": 3,
-        "name": "AI Content Generator",
-        "description": "Machine learning-powered content generation tool with user-friendly interface and advanced customization options.",
-        "tags": ["AI", "Python", "React"]
+        "name": "Python & OOP Utilities",
+        "description": "Collection of core algorithmic scripts and object-oriented programming structures built during university coursework.",
+        "tags": ["OOP", "Python"]
       }
     ],
     "viewProject": "View Project →"
