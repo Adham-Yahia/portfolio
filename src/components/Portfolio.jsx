@@ -121,27 +121,39 @@ export const Portfolio = () => {
                 }}
                 className="group bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700 h-full flex flex-col"
               >
-                {/* Project Image Placeholder */}
+                {/* Project Image */}
                 <motion.div 
-                  className="relative w-full h-48 bg-gradient-to-br from-primary-400 via-primary-500 to-secondary-500 overflow-hidden"
+                  className="relative w-full h-48 overflow-hidden"
                   whileHover={{ scale: 1.05 }}
                 >
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <motion.div
-                      className="text-white text-center"
-                      animate={{ y: [0, -10, 0], rotate: [0, 5, -5, 0] }}
-                      transition={{
-                        duration: 3,
-                        repeat: Infinity,
-                        ease: 'easeInOut',
+                  {project.image ? (
+                    <img 
+                      src={project.image} 
+                      alt={project.name}
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.parentElement.classList.add('bg-gradient-to-br', 'from-primary-400', 'via-primary-500', 'to-secondary-500');
                       }}
-                    >
-                      <div className="text-5xl mb-2">
-                        {index === 0 ? '📊' : index === 1 ? '🛒' : '🤖'}
-                      </div>
-                      <div className="text-sm font-semibold">Project {project.id}</div>
-                    </motion.div>
-                  </div>
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-primary-400 via-primary-500 to-secondary-500 flex items-center justify-center">
+                      <motion.div
+                        className="text-white text-center"
+                        animate={{ y: [0, -10, 0], rotate: [0, 5, -5, 0] }}
+                        transition={{
+                          duration: 3,
+                          repeat: Infinity,
+                          ease: 'easeInOut',
+                        }}
+                      >
+                        <div className="text-5xl mb-2">
+                          {index === 0 ? '📊' : index === 1 ? '🛒' : '🤖'}
+                        </div>
+                        <div className="text-sm font-semibold">Project {project.id}</div>
+                      </motion.div>
+                    </div>
+                  )}
                   
                   {/* Overlay on hover */}
                   <motion.div 

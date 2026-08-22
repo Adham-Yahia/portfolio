@@ -29,19 +29,22 @@
         "id": 1,
         "name": "Little Lemon Restaurant App",
         "description": "A responsive Mediterranean restaurant web application featuring interactive menus, semantic layouts, and optimized UI components.",
-        "tags": ["HTML/CSS", "JavaScript", "React"]
+        "tags": ["HTML/CSS", "JavaScript", "React"],
+        "image": "/images/projects/little-lemon.jpg"
       },
       {
         "id": 2,
         "name": "Personal Portfolio Website",
         "description": "Modern personal portfolio built to showcase technical skills, continuous learning milestones, and deployed web apps.",
-        "tags": ["Framer Motion", "Tailwind CSS", "React"]
+        "tags": ["Framer Motion", "Tailwind CSS", "React"],
+        "image": "/images/projects/portfolio.jpg"
       },
       {
         "id": 3,
         "name": "Python & OOP Utilities",
         "description": "Collection of core algorithmic scripts and object-oriented programming structures built during university coursework.",
-        "tags": ["OOP", "Python"]
+        "tags": ["OOP", "Python"],
+        "image": "/images/projects/python-oop.jpg"
       }
     ],
     "viewProject": "View Project →"

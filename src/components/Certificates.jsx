@@ -10,7 +10,7 @@ export const Certificates = () => {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
 
   const certificatesData = [
-        {
+    {
       id: 1,
       name: 'Introduction to Front-End',
       issuer: 'Meta',
@@ -21,7 +21,8 @@ export const Certificates = () => {
       color: 'from-orange-500 via-red-500 to-pink-600',
       credentialUrl: 'https://www.coursera.org/account/accomplishments/records/YXMRJARU2CJC',
       bgGlow: 'bg-orange-500/20',
-      description: 'including HTML5, CSS3, Bootstrap, UI design, responsive web layouts, and an introduction to React and modern web development.'
+      description: 'including HTML5, CSS3, Bootstrap, UI design, responsive web layouts, and an introduction to React and modern web development.',
+      image: '/images/certificates/frontend-intro.jpg'
     },
     {
       id: 2,
@@ -34,7 +35,8 @@ export const Certificates = () => {
       icon: '⚡',
       color: 'from-yellow-400 via-orange-500 to-red-500',
       bgGlow: 'bg-yellow-500/20',
-      description: 'Advanced JavaScript ES6+ concepts, DOM manipulation, unit testing with Jest, asynchronous programming, and OOP practices.'
+      description: 'Advanced JavaScript ES6+ concepts, DOM manipulation, unit testing with Jest, asynchronous programming, and OOP practices.',
+      image: '/images/certificates/javascript.jpg'
     },
     {
       id: 3,
@@ -47,7 +49,8 @@ export const Certificates = () => {
       icon: '🐙',
       color: 'from-purple-600 via-indigo-600 to-blue-600',
       bgGlow: 'bg-purple-500/20',
-      description: 'Linux, Git, GitHub, branch management, and team collaboration workflows.'
+      description: 'Linux, Git, GitHub, branch management, and team collaboration workflows.',
+      image: '/images/certificates/version-control.jpg'
     },
     {
       id: 4,
@@ -60,7 +63,8 @@ export const Certificates = () => {
       icon: '⚛️',
       color: 'from-blue-500 via-cyan-500 to-blue-600',
       bgGlow: 'bg-blue-500/20',
-      description: 'Advanced HTML5 & CSS3 layout techniques, Bootstrap framework, Flexbox, CSS Grid, responsive design, web accessibility (WCAG), and animations'
+      description: 'Advanced HTML5 & CSS3 layout techniques, Bootstrap framework, Flexbox, CSS Grid, responsive design, web accessibility (WCAG), and animations',
+      image: '/images/certificates/html-css.jpg'
     },
     {
       id: 5,
@@ -73,7 +77,8 @@ export const Certificates = () => {
       icon: '⚛️',
       color: 'from-blue-500 via-cyan-500 to-blue-600',
       bgGlow: 'bg-blue-500/20',
-      description: 'Completed comprehensive training on core React concepts, including building reusable components, managing data flow using props, designing dynamic user interfaces, and handling form interactions to create scalable and responsive web applications.'
+      description: 'including building reusable components, managing data flow using props, designing dynamic user interfaces, and handling form interactions to create scalable and responsive web applications.',
+      image: '/images/certificates/react.jpg'
     },
     {
       id: 6,
@@ -86,7 +91,8 @@ export const Certificates = () => {
       icon: '🌐',
       color: 'from-green-500 via-emerald-500 to-teal-600',
       bgGlow: 'bg-green-500/20',
-      description: 'Structure proggramming, OOP, algorithm and Data Structure'
+      description: 'Structure proggramming, OOP, algorithm and Data Structure',
+      image: '/images/certificates/python.jpg'
     },
     {
       id: 7,
@@ -99,22 +105,22 @@ export const Certificates = () => {
       icon: '🎨',
       color: 'from-purple-500 via-pink-500 to-rose-600',
       bgGlow: 'bg-purple-500/20',
-      description: 'Innovation strategies, design thinking, problem-solving, and creative solution development.'
+      description: 'Innovation strategies, design thinking, problem-solving, and creative solution development.',
+      image: '/images/certificates/innovation.jpg'
     },
-    
   ];
 
   const categories = ['All', 'AI', 'Web Development', 'Frontend', 'Backend'];
 
-const filteredCertificates = useMemo(() => {
-  if (selectedCategory === 'All') return certificatesData;
-  return certificatesData.filter(cert => {
-    if (Array.isArray(cert.category)) {
-      return cert.category.includes(selectedCategory);
-    }
-    return cert.category === selectedCategory;
-  });
-}, [selectedCategory]);
+  const filteredCertificates = useMemo(() => {
+    if (selectedCategory === 'All') return certificatesData;
+    return certificatesData.filter(cert => {
+      if (Array.isArray(cert.category)) {
+        return cert.category.includes(selectedCategory);
+      }
+      return cert.category === selectedCategory;
+    });
+  }, [selectedCategory]);
 
   return (
     <section 
@@ -228,7 +234,7 @@ const filteredCertificates = useMemo(() => {
                   damping: 25,
                   delay: index * 0.08,
                 }}
-                className="group relative perspective-1000"
+                className="group relative perspective-1000 flex"
                 onMouseEnter={triggerHover}
               >
                 {/* Glow Effect */}
@@ -240,9 +246,9 @@ const filteredCertificates = useMemo(() => {
                   transition={{ duration: 3, repeat: Infinity }}
                 />
 
-                {/* Main Card */}
+                {/* Main Card - h-full ensures all cards match the tallest card in the row */}
                 <motion.div
-                  className="relative h-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl rounded-3xl border-2 border-gray-200/50 dark:border-gray-700/50 overflow-hidden cursor-pointer transform-gpu"
+                  className="relative w-full h-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl rounded-3xl border-2 border-gray-200/50 dark:border-gray-700/50 overflow-hidden cursor-pointer transform-gpu flex flex-col justify-between"
                   whileHover={{ 
                     y: -12,
                     rotateX: 5,
@@ -251,70 +257,94 @@ const filteredCertificates = useMemo(() => {
                   }}
                   onClick={() => triggerClick()}
                 >
-                  {/* Animated Gradient Background */}
-                  <motion.div
-                    className={`absolute top-0 right-0 w-64 h-64 bg-gradient-to-br ${cert.color} opacity-10 rounded-full blur-3xl`}
-                    animate={{
-                      x: [0, 30, 0],
-                      y: [0, -20, 0],
-                      scale: [1, 1.2, 1]
-                    }}
-                    transition={{ duration: 8, repeat: Infinity }}
-                  />
+                  {/* Top Content Wrapper */}
+                  <div>
+                    {/* Animated Gradient Background */}
+                    <motion.div
+                      className={`absolute top-0 right-0 w-64 h-64 bg-gradient-to-br ${cert.color} opacity-10 rounded-full blur-3xl`}
+                      animate={{
+                        x: [0, 30, 0],
+                        y: [0, -20, 0],
+                        scale: [1, 1.2, 1]
+                      }}
+                      transition={{ duration: 8, repeat: Infinity }}
+                    />
 
-                  {/* Shimmer Effect */}
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 dark:via-white/10 to-transparent"
-                    animate={{ x: ['-200%', '200%'] }}
-                    transition={{ duration: 3, repeat: Infinity, repeatDelay: 2 }}
-                  />
+                    {/* Shimmer Effect */}
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 dark:via-white/10 to-transparent pointer-events-none"
+                      animate={{ x: ['-200%', '200%'] }}
+                      transition={{ duration: 3, repeat: Infinity, repeatDelay: 2 }}
+                    />
 
-                  <div className="relative z-10 p-7 h-full flex flex-col">
-                    {/* Icon & Badge */}
-                    <div className="flex items-start justify-between mb-5">
-                      <motion.div
-                        className={`relative flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br ${cert.color} text-white text-3xl shadow-lg`}
-                        whileHover={{ rotate: [0, -10, 10, 0], scale: 1.15 }}
-                        transition={{ duration: 0.5 }}
+                    {/* Certificate Image - Adjusted height to h-[275px] (~70) */}
+                    {cert.image && (
+                      <motion.div 
+                        className="w-full h-[275px] overflow-hidden relative group/img bg-black"
+                        whileHover={{ scale: 1.02 }}
+                        transition={{ duration: 0.3 }}
                       >
-                        {cert.icon}
-                        <motion.div
-                          className="absolute inset-0 rounded-2xl bg-white/20"
-                          animate={{ scale: [1, 1.3, 1], opacity: [0.5, 0, 0.5] }}
-                          transition={{ duration: 2, repeat: Infinity }}
+                        <img 
+                          src={cert.image} 
+                          alt={cert.name}
+                          className="w-full h-full object-fill transform group-hover/img:scale-105 transition-transform duration-500"
+                          onError={(e) => {
+                            e.target.style.display = 'none';
+                          }}
                         />
                       </motion.div>
-                      
-                      <motion.div
-                        className={`px-4 py-1.5 bg-gradient-to-r ${cert.color} text-white text-xs font-black rounded-full shadow-md uppercase tracking-wide`}
-                        whileHover={{ scale: 1.1, rotate: 3 }}
-                      >
-                        {cert.category}
-                      </motion.div>
-                    </div>
+                    )}
 
-                    {/* Title */}
-                    <h3 className="text-2xl font-black text-gray-900 dark:text-white mb-3 leading-tight group-hover:text-primary-500 dark:group-hover:text-primary-400 transition-colors duration-300">
-                      {cert.name}
-                    </h3>
+                    <div className="relative z-10 p-7">
+                      {/* Icon & Badge */}
+                      <div className="flex items-start justify-between mb-4">
+                        <motion.div
+                          className={`relative flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br ${cert.color} text-white text-2xl shadow-lg`}
+                          whileHover={{ rotate: [0, -10, 10, 0], scale: 1.15 }}
+                          transition={{ duration: 0.5 }}
+                        >
+                          {cert.icon}
+                          <motion.div
+                            className="absolute inset-0 rounded-2xl bg-white/20"
+                            animate={{ scale: [1, 1.3, 1], opacity: [0.5, 0, 0.5] }}
+                            transition={{ duration: 2, repeat: Infinity }}
+                          />
+                        </motion.div>
+                        
+                        <motion.div
+                          className={`px-4 py-1.5 bg-gradient-to-r ${cert.color} text-white text-xs font-black rounded-full shadow-md uppercase tracking-wide`}
+                          whileHover={{ scale: 1.1, rotate: 3 }}
+                        >
+                          {Array.isArray(cert.category) ? cert.category[0] : cert.category}
+                        </motion.div>
+                      </div>
 
-                    {/* Issuer & ID */}
-                    <div className="mb-4">
-                      <p className="text-base font-bold text-primary-600 dark:text-primary-400 mb-1">
-                        {cert.issuer}
+                      {/* Title */}
+                      <h3 className="text-2xl font-black text-gray-900 dark:text-white mb-2 leading-tight group-hover:text-primary-500 dark:group-hover:text-primary-400 transition-colors duration-300">
+                        {cert.name}
+                      </h3>
+
+                      {/* Issuer & ID */}
+                      <div className="mb-3">
+                        <p className="text-sm font-bold text-primary-600 dark:text-primary-400 mb-1">
+                          {cert.issuer}
+                        </p>
+                        <p className="text-xs font-mono text-gray-500 dark:text-gray-500 tracking-wider">
+                          ID: {cert.credentialId}
+                        </p>
+                      </div>
+
+                      {/* Description */}
+                      <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                        {cert.description}
                       </p>
-                      <p className="text-xs font-mono text-gray-500 dark:text-gray-500 tracking-wider">
-                        ID: {cert.credentialId}
-                      </p>
                     </div>
+                  </div>
 
-                    {/* Description */}
-                    <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-5 flex-1">
-                      {cert.description}
-                    </p>
-
+                  {/* Bottom Section (Pushed to the bottom consistently across all cards) */}
+                  <div className="relative z-10 px-7 pb-7 pt-2 mt-auto">
                     {/* Date & Status */}
-                    <div className="flex items-center justify-between mb-5 pt-4 border-t border-gray-200 dark:border-gray-700">
+                    <div className="flex items-center justify-between mb-3 pt-3 border-t border-gray-200 dark:border-gray-700">
                       <div className="flex items-center gap-2">
                         <motion.div
                           className="w-2 h-2 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full"
@@ -332,7 +362,7 @@ const filteredCertificates = useMemo(() => {
 
                     {/* CTA Button */}
                     <motion.button
-                      className="relative w-full py-4 rounded-xl font-bold text-white overflow-hidden group/btn"
+                      className="relative w-full py-3 rounded-xl font-bold text-white overflow-hidden group/btn"
                       whileHover={{ scale: 1.03 }}
                       whileTap={{ scale: 0.98 }}
                       onClick={(e) => {
@@ -341,7 +371,6 @@ const filteredCertificates = useMemo(() => {
                           window.open(cert.credentialUrl, '_blank', 'noopener,noreferrer');
                         }
                       }}
-                      
                     >
                       <div className={`absolute inset-0 bg-gradient-to-r ${cert.color}`} />
                       <motion.div

@@ -13,7 +13,8 @@
           "credentialUrl": "https://www.coursera.org/account/accomplishments/records/GIFOP9BNV5HU",
           "icon": "🐙",
           "color": "from-purple-600 to-indigo-600",
-          "description": "Linux, Git, GitHub, branch management, and team collaboration workflows."
+          "description": "Linux, Git, GitHub, branch management, and team collaboration workflows.",
+          "image": "/images/certificates/version-control.jpg"
         },
                 
         {
@@ -25,7 +26,8 @@
           "credentialUrl": "https://www.coursera.org/account/accomplishments/records/YXMRJARU2CJC",
           "icon": "☁️",
           "color": "from-orange-500 via-red-500 to-pink-600",
-          "description": "including HTML5, CSS3, Bootstrap, UI design, responsive web layouts, and an introduction to React and modern web development."
+          "description": "including HTML5, CSS3, Bootstrap, UI design, responsive web layouts, and an introduction to React and modern web development.",
+          "image": "/images/certificates/frontend-intro.jpg"
         },
         {
           "id": 2,
@@ -36,7 +38,8 @@
           "credentialUrl": "https://www.coursera.org/account/accomplishments/records/M6ZYP1NTV55E",
           "icon": "🌐",
           "color": "from-green-500 to-emerald-500",
-          "description": "Advanced JavaScript ES6+ concepts, DOM manipulation, unit testing with Jest, asynchronous programming, and OOP practices."
+          "description": "Advanced JavaScript ES6+ concepts, DOM manipulation, unit testing with Jest, asynchronous programming, and OOP practices.",
+          "image": "/images/certificates/javascript.jpg"
         },
         {
           "id": 3,
@@ -47,7 +50,8 @@
           "credentialUrl": "#",
           "icon": "📝",
           "color": "from-yellow-500 to-orange-500",
-          "description": "Advanced JavaScript ES6+ concepts and best practices"
+          "description": "Advanced JavaScript ES6+ concepts and best practices",
+          "image": "/images/certificates/javascript-mastery.jpg"
         },
         {
           "id": 4,
@@ -58,7 +62,8 @@
           "credentialUrl": "#",
           "icon": "🎨",
           "color": "from-purple-500 to-pink-500",
-          "description": "User interface and user experience design principles"
+          "description": "User interface and user experience design principles",
+          "image": "/images/certificates/ui-ux-design.jpg"
         },
         {
           "id": 5,
@@ -69,7 +74,8 @@
           "credentialUrl": "#",
           "icon": "🚀",
           "color": "from-green-600 to-teal-600",
-          "description": "Backend development with Node.js and Express"
+          "description": "Backend development with Node.js and Express",
+          "image": "/images/certificates/nodejs-backend.jpg"
         },
         {
           "id": 6,
@@ -80,7 +86,8 @@
           "credentialUrl": "#",
           "icon": "☁️",
           "color": "from-orange-500 to-red-500",
-          "description": "AWS cloud fundamentals and deployment practices"
+          "description": "AWS cloud fundamentals and deployment practices",
+          "image": "/images/certificates/aws-cloud.jpg"
         },
         {
           "id": 7,
@@ -91,7 +98,8 @@
           "credentialUrl": "#",
           "icon": "☁️",
           "color": "from-orange-500 to-red-500",
-          "description": "AWS cloud fundamentals and deployment practices"
+          "description": "AWS cloud fundamentals and deployment practices",
+          "image": "/images/certificates/aws-cloud.jpg"
         }
       ],
       "categories": ["All", "React", "JavaScript", "Web Development", "Design", "Backend", "Cloud"]
@@ -102,7 +110,6 @@
       "title": "الشهادات والإنجازات",
       "description": "الشهادات المهنية والأوراق الاعتمادية التي حصلت عليها",
       "items": [
-        [
         {
           "id": 1,
           "name": "مقدمة في تطوير الواجهات الأمامية",
@@ -112,7 +119,8 @@
           "credentialUrl": "https://www.coursera.org/account/accomplishments/records/YXMRJARU2CJC",
           "icon": "☁️",
           "color": "from-orange-500 via-pink-500 to-rose-600",
-          "description": "أساسيات تطوير الواجهات الأمامية وتتضمن HTML5 وCSS3 وBootstrap، مبادئ تصميم الواجهات، التصميم المتجاوب، ومقدمة في React وتطوير الويب الحديث."
+          "description": "أساسيات تطوير الواجهات الأمامية وتتضمن HTML5 وCSS3 وBootstrap، مبادئ تصميم الواجهات، التصميم المتجاوب، ومقدمة في React وتطوير الويب الحديث.",
+          "image": "/images/certificates/frontend-intro.jpg"
         },
         {
           "id": 2,
@@ -123,7 +131,8 @@
           "credentialUrl": "https://www.coursera.org/account/accomplishments/records/M6ZYP1NTV55E",
           "icon": "📝",
           "color": "from-amber-500 via-orange-500 to-red-500",
-          "description": "إتقان مفاهيم JavaScript وES6+ المتقدمة، التعامل مع الـ DOM، اختبار الوحدات باستعمال Jest، والبرمجة غير المتزامنة."
+          "description": "إتقان مفاهيم JavaScript وES6+ المتقدمة، التعامل مع الـ DOM، اختبار الوحدات باستعمال Jest، والبرمجة غير المتزامنة.",
+          "image": "/images/certificates/javascript.jpg"
         },
         {
           "id": 3,
@@ -134,7 +143,8 @@
           "credentialUrl": "https://www.coursera.org/account/accomplishments/records/GIFOP9BNV5HU",
           "icon": "🐙",
           "color": "from-purple-600 via-indigo-600 to-blue-600",
-          "description": "نظام Linux، Git، GitHub، إدارة الفروع (Branches)، وسير العمل الجماعي للفرق."
+          "description": "نظام Linux، Git، GitHub، إدارة الفروع (Branches)، وسير العمل الجماعي للفرق.",
+          "image": "/images/certificates/version-control.jpg"
         },
         {
           "id": 4,
@@ -145,7 +155,8 @@
           "credentialUrl": "https://www.coursera.org/account/accomplishments/records/YXMRJARU2CJC",
           "icon": "⚛️",
           "color": "from-cyan-500 via-blue-500 to-indigo-600",
-          "description": "تقنيات تخطيط الويب المتقدمة بـ HTML5 وCSS3، إطار العمل Bootstrap، استخدام Flexbox وCSS Grid، التصميم المتجاوب، وإتاحة الويب (WCAG)."
+          "description": "تقنيات تخطيط الويب المتقدمة بـ HTML5 وCSS3، إطار العمل Bootstrap، استخدام Flexbox وCSS Grid، التصميم المتجاوب، وإتاحة الويب (WCAG).",
+          "image": "/images/certificates/html-css.jpg"
         },
         {
           "id": 5,
@@ -155,7 +166,8 @@
           "category": "رياكت",
           "icon": "⚛️",
           "color": "from-blue-500 via-sky-500 to-cyan-500",
-          "description": "إتمام تدريب شامل على أساسيات رياكت (React)، وتضمن بناء مكونات قابلة لإعادة الاستخدام (Reusable Components)، إدارة تدفق البيانات عبر الـ Props، وتصميم واجهات مستخدم تفاعلية وديناميكية لتطوير تطبيقات ويب حديثة وقابلة للتوسع."
+          "description": "إتمام تدريب شامل على أساسيات رياكت (React)، وتضمن بناء مكونات قابلة لإعادة الاستخدام (Reusable Components)، إدارة تدفق البيانات عبر الـ Props، وتصميم واجهات مستخدم تفاعلية وديناميكية لتطوير تطبيقات ويب حديثة وقابلة للتوسع.",
+          "image": "/images/certificates/react.jpg"
         },
         {
           "id": 6,
@@ -166,7 +178,8 @@
           "credentialUrl": "https://maharatech.gov.eg/mod/customcert/verify_certificate.php?",
           "icon": "🌐",
           "color": "from-emerald-500 via-teal-500 to-green-600",
-          "description": "البرمجة الهيكلية، البرمجة كائنية التوجه (OOP)، الخوارزميات، وهياكل البيانات."
+          "description": "البرمجة الهيكلية، البرمجة كائنية التوجه (OOP)، الخوارزميات، وهياكل البيانات.",
+          "image": "/images/certificates/python.jpg"
         },
         {
           "id": 7,
@@ -177,10 +190,9 @@
           "credentialUrl": "https://poweredby.asu.edu/validate-credentials/?token=d1703266-747a-4352-bb08-435c5a1d0a5f&email=ayz304333@gu.edu.eg",
           "icon": "🎨",
           "color": "from-fuchsia-500 via-purple-500 to-pink-600",
-          "description": "استراتيجيات الابتكار، التفكير التصميمي، حل المشكلات، وتطوير الحلول الإبداعية."
+          "description": "استراتيجيات الابتكار، التفكير التصميمي، حل المشكلات، وتطوير الحلول الإبداعية.",
+          "image": "/images/certificates/innovation.jpg"
         }
-      ]
-        
       ],
       "categories": ["الكل", "React", "JavaScript", "Web Development", "Design", "Backend", "Cloud"]
     }

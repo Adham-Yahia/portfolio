@@ -26,7 +26,7 @@ A modern, responsive personal portfolio website built with React, featuring dark
 ## 📁 Project Structure
 
 ```
-person/
+portfolio/
 ├── src/
 │   ├── components/
 │   │   ├── Navbar.jsx
@@ -66,7 +66,7 @@ person/
 
 1. **Navigate to project directory:**
    ```bash
-   cd d:\MyWork\person
+   cd d:\MyWork\portfolio
    ```
 
 2. **Install dependencies:**
