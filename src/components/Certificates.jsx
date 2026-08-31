@@ -61,8 +61,8 @@ export const Certificates = () => {
       credentialId: 'YXMRJARU2CJC',
       credentialUrl: 'https://www.coursera.org/account/accomplishments/records/YXMRJARU2CJC',
       icon: '⚛️',
-      color: 'from-blue-500 via-cyan-500 to-blue-600',
-      bgGlow: 'bg-blue-500/20',
+      color: 'from-rose-500 via-pink-500 to-red-500',
+      bgGlow: 'bg-rose-500/20',
       description: 'Advanced HTML5 & CSS3 layout techniques, Bootstrap framework, Flexbox, CSS Grid, responsive design, web accessibility (WCAG), and animations',
       image: '/images/certificates/html-css.jpg'
     },
@@ -82,6 +82,20 @@ export const Certificates = () => {
     },
     {
       id: 6,
+      name: 'Advanced React ', 
+      issuer: 'Meta',
+      date: 'August 2026',
+      category: ['Web Development','Frontend'],
+      credentialId: 'NFFQOHQHW4RX',
+      credentialUrl: 'https://www.coursera.org/account/accomplishments/verify/NFFQOHQHW4RX',
+      icon: '⚛️',
+      color: 'from-blue-500 via-cyan-500 to-blue-600',
+      bgGlow: 'bg-blue-500/20',
+      description: 'Mastered advanced React concepts including hooks, performance optimization, and scalable component patterns to build dynamic web applications',
+      image: '/images/certificates/advanced-react.jpg'
+    },
+    {
+      id: 7,
       name: 'Python Programming',
       issuer: 'Mahara-Tech',
       date: 'February 2026',
@@ -95,7 +109,7 @@ export const Certificates = () => {
       image: '/images/certificates/python.jpg'
     },
     {
-      id: 7,
+      id: 8,
       name: 'IC-What is Innovation?',
       issuer: 'Arizona State University',
       date: 'March 2026',
