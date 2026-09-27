@@ -30,21 +30,32 @@
         "name": "Little Lemon Restaurant App",
         "description": "A responsive Mediterranean restaurant web application featuring interactive menus, semantic layouts, and optimized UI components.",
         "tags": ["HTML/CSS", "JavaScript", "React"],
-        "image": "/images/projects/little-lemon.jpg"
+        "image": "/images/projects/little-lemon.jpg",
+        "link":""
       },
       {
         "id": 2,
-        "name": "Personal Portfolio Website",
+        "name": "Dory",
         "description": "Modern personal portfolio built to showcase technical skills, continuous learning milestones, and deployed web apps.",
-        "tags": ["Framer Motion", "Tailwind CSS", "React"],
-        "image": "/images/projects/portfolio.jpg"
+        "tags": ["React.js", "Bootstrap CSS", "Canvas"],
+        "image": "/images/projects/dory.jpg",
+        "link":"https://dory-pi.vercel.app/"
       },
       {
         "id": 3,
-        "name": "Python & OOP Utilities",
+        "name": "Code Spire",
         "description": "Collection of core algorithmic scripts and object-oriented programming structures built during university coursework.",
-        "tags": ["OOP", "Python"],
-        "image": "/images/projects/python-oop.jpg"
+        "tags": ["React.js", "Bootstrap CSS"],
+        "image": "/images/projects/codespire.jpg",
+        "link":"https://codespire-eight.vercel.app/"
+      },
+      {
+        "id": 4,
+        "name": "Hala Coffee",
+        "description": "Collection of core algorithmic scripts and object-oriented programming structures built during university coursework.",
+        "tags": ["React.js", "Bootstrap CSS"],
+        "image": "/images/projects/hala.jpg",
+        "link":"https://hala-coffee.vercel.app/"
       }
     ],
     "viewProject": "View Project →"

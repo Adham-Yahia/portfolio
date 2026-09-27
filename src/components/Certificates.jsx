@@ -96,6 +96,34 @@ export const Certificates = () => {
     },
     {
       id: 7,
+      name: 'Introduction to Databases',
+      issuer: 'Meta',
+      date: 'March 2026',
+      category: '["Backend", "Web Development"]',
+      credentialId: 'S17UQ96LAFUL',
+      credentialUrl: 'https://www.coursera.org/account/accomplishments/records/S17UQ96LAFUL',
+      icon: '🎨',
+      color: 'from-purple-500 via-pink-500 to-rose-600',
+      bgGlow: 'bg-purple-500/20',
+      description: 'Mastering relational database design, writing optimized SQL queries, understanding database normalization, and performing CRUD operations to build robust data-driven backend systems.',
+      image: '/images/certificates/Introduction-to-Databases.jpg'
+    },
+    {
+      id: 8,
+      name: 'Programming in Python',
+      issuer: 'Meta',
+      date: 'March 2026',
+      category: '["Backend", "AI"]',
+      credentialId: 'V9379NM7Q58P',
+      credentialUrl: 'https://www.coursera.org/account/accomplishments/records/V9379NM7Q58P',
+      icon: '🌐',
+      color: 'from-purple-500 via-pink-500 to-rose-600',
+      bgGlow: 'bg-purple-500/20',
+      description: 'Learning fundamental Python syntax, object-oriented programming (OOP) concepts, data structures, error handling, and writing clean, scalable scripts to solve real-world development problems.',
+      image: '/images/certificates/Python-Programming.jpg'
+    },
+    {
+      id: 9,
       name: 'Python Programming',
       issuer: 'Mahara-Tech',
       date: 'February 2026',
@@ -109,7 +137,7 @@ export const Certificates = () => {
       image: '/images/certificates/python.jpg'
     },
     {
-      id: 8,
+      id: 10,
       name: 'IC-What is Innovation?',
       issuer: 'Arizona State University',
       date: 'March 2026',
@@ -264,7 +292,7 @@ export const Certificates = () => {
                 <motion.div
                   className="relative w-full h-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl rounded-3xl border-2 border-gray-200/50 dark:border-gray-700/50 overflow-hidden cursor-pointer transform-gpu flex flex-col justify-between"
                   whileHover={{ 
-                    y: -12,
+                    y: -12, 
                     rotateX: 5,
                     rotateY: 5,
                     boxShadow: '0 25px 50px rgba(99, 102, 241, 0.25)'

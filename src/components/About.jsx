@@ -27,7 +27,7 @@ export const About = () => {
     },
     {
       category: 'Backend',
-      skills: ['Python', 'Django', 'RESTful APIs', 'SQL & Databases', 'APIs Architecture'],
+      skills: ['Python', 'Django', 'RESTful APIs', 'MySQL & Databases', 'APIs Architecture'],
       color: 'from-purple-500 to-pink-500'
     },
   ];

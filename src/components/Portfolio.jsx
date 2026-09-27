@@ -198,7 +198,9 @@ export const Portfolio = () => {
 
                   {/* View Project Link */}
                   <motion.a
-                    href="#"
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center text-primary-500 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-semibold group/link transition-colors duration-300 mt-auto"
                     whileHover={{ x: 5 }}
                   >
