@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -6,34 +6,29 @@ import { containerVariants, itemVariants } from '../utils/animations';
 
 export const About = () => {
   const { t } = useTranslation();
-  const [selectedSkill, setSelectedSkill] = useState(null);
-  const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: true });
+  const { ref, inView } = useInView({ threshold: 0.15, triggerOnce: true });
 
   const skillCategories = [
-        {
-      category: 'AI',
-      skills: ['Python/OOP', 'Machine Learning'],
-      color: 'from-amber-500 to-orange-500'
+    {
+      category: 'AI & Data Engineering',
+      skills: ['Python', 'OOP'],
     },
     {
-      category: 'Frontend',
-      skills: ['HTML5/CSS3', 'JavaScript', 'React', 'Bootstrap CSS', 'Responsive Design', 'Web Accessibility (WCAG)'],
-      color: 'from-blue-500 to-cyan-500'
+      category: 'Frontend Development',
+      skills: ['React', 'JavaScript (ES6+)', 'Bootstrap CSS', 'HTML5 / CSS3', 'Responsive Design', 'Web Accessibility (WCAG)'],
     },
     {
-      category: 'Tools & Workflow',
-      skills: ['Linux / Unix', 'Command Line (Bash)', 'Git & GitHub', 'Version Control', 'UI/UX Principles', 'Web Performance'],
-      color: 'from-green-500 to-emerald-500'
-    },
-    {
-      category: 'Backend',
+      category: 'Backend & Systems',
       skills: ['Python', 'Django', 'RESTful APIs', 'MySQL & Databases', 'APIs Architecture'],
-      color: 'from-purple-500 to-pink-500'
+    },
+    {
+      category: 'Workflow & Tools',
+      skills: ['Git & GitHub', 'Version Control', 'Linux / Unix', 'Command Line (Bash)', 'UI/UX Principles', 'Web Performance'],
     },
   ];
 
   return (
-    <section id="about" className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300" ref={ref}>
+    <section id="about" className="py-24 bg-slate-100/70 dark:bg-[var(--bg-primary)] border-y border-slate-200/80 dark:border-[var(--border-subtle)] transition-colors duration-300" ref={ref}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
         <motion.div 
@@ -44,156 +39,90 @@ export const About = () => {
         >
           <motion.h2 
             variants={itemVariants}
-            className="text-4xl sm:text-5xl font-bold mb-4"
+            className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 mb-3"
           >
-            <span className="bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent">
-              {t('about.title')}
-            </span>
+            {t('about.title')}
           </motion.h2>
+          <motion.div 
+            variants={itemVariants} 
+            className="w-12 h-1 bg-blue-600 dark:bg-blue-400 mx-auto rounded-full"
+          />
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Text Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          {/* Text Content & Skills */}
           <motion.div 
-            className="space-y-6"
+            className="lg:col-span-7 space-y-6"
             variants={containerVariants}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
           >
             <motion.p 
               variants={itemVariants}
-              className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed"
+              className="text-base sm:text-lg text-slate-700 dark:text-slate-300 leading-relaxed font-normal"
             >
               {t('about.description1')}
             </motion.p>
             <motion.p 
               variants={itemVariants}
-              className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed"
+              className="text-base sm:text-lg text-slate-700 dark:text-slate-300 leading-relaxed font-normal"
             >
               {t('about.description2')}
             </motion.p>
 
-            {/* Skills by Category */}
-            <motion.div className="mt-12 space-y-6">
-              {skillCategories.map((skillGroup, idx) => (
-                <motion.div
-                  key={idx}
-                  variants={itemVariants}
-                  className="group"
-                >
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center">
-                    <motion.div 
-                      className={`w-1 h-6 mr-3 rounded bg-gradient-to-b ${skillGroup.color}`}
-                      whileHover={{ height: 32 }}
-                    />
-                    {skillGroup.category}
-                  </h3>
-                  <div className="grid grid-cols-2 gap-3">
-                    {skillGroup.skills.map((skill, sidx) => (
-                      <motion.div
-                        key={sidx}
-                        className={`px-4 py-3 bg-white dark:bg-gray-700 rounded-lg border-2 border-gray-200 dark:border-gray-600 cursor-pointer group relative overflow-hidden`}
-                        whileHover={{ scale: 1.08, borderColor: 'rgb(99, 102, 241)' }}
-                        onHoverStart={() => setSelectedSkill(`${skillGroup.category}-${skill}`)}
-                        onHoverEnd={() => setSelectedSkill(null)}
-                      >
-                        <motion.div 
-                          className={`absolute inset-0 bg-gradient-to-r ${skillGroup.color} opacity-0 group-hover:opacity-10`}
-                          initial={{ x: -100 }}
-                          whileHover={{ x: 0 }}
-                        />
-                        <span className="relative z-10 font-semibold text-gray-700 dark:text-gray-200">
+            {/* Skills Categorized with Enhanced Interactive Pills */}
+            <motion.div variants={itemVariants} className="pt-6 space-y-6">
+              <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                {t('about.skills', 'Technical Skills')}
+              </h3>
+
+              <div className="space-y-5">
+                {skillCategories.map((group, idx) => (
+                  <div key={idx} className="space-y-2.5">
+                    <span className="text-xs font-semibold text-slate-900 dark:text-slate-200">
+                      {group.category}
+                    </span>
+                    <div className="flex flex-wrap gap-2">
+                      {group.skills.map((skill, sidx) => (
+                        <span
+                          key={sidx}
+                          className="px-3 py-1.5 rounded-lg bg-white dark:bg-[#162032] text-slate-700 dark:text-slate-200 text-xs font-medium border border-slate-200 dark:border-[var(--border-subtle)] shadow-sm hover:border-blue-500/50 dark:hover:border-blue-400/50 hover:text-blue-600 dark:hover:text-blue-400 hover:-translate-y-0.5 hover:shadow transition-all duration-200 select-none cursor-default"
+                        >
                           {skill}
                         </span>
-                      </motion.div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
-                </motion.div>
-              ))}
+                ))}
+              </div>
             </motion.div>
           </motion.div>
 
-          {/* Image Container with Floating Animation */}
+          {/* Profile Card Frame */}
           <motion.div 
-            className="flex justify-center"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            className="lg:col-span-5 flex justify-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
           >
             <div className="relative w-full max-w-sm">
-              {/* Rotating border frame */}
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-2xl opacity-25 blur-2xl"
-                animate={{
-                  scale: [1, 1.1, 1],
-                  rotate: [0, 360],
-                }}
-                transition={{
-                  scale: { duration: 3, repeat: Infinity },
-                  rotate: { duration: 20, repeat: Infinity, ease: 'linear' },
-                }}
-              />
-              
-              {/* Main Image Container */}
-              <motion.div
-                className="relative w-full aspect-square bg-gradient-to-br from-primary-500 to-secondary-500 rounded-2xl overflow-hidden shadow-2xl"
-                animate={{
-                  y: [0, -20, 0],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                }}
-                whileHover={{ scale: 1.05 }}
-              >
-                <img 
-                  src="image.jpg" 
-                  alt="Adham Yahia" 
-                  className="w-full h-full object-cover relative z-10"
-                />
-
-                {/* Animated background pattern */}
-                <motion.div
-                  className="absolute inset-0 opacity-20 z-0"
-                  animate={{
-                    backgroundPosition: ['0% 0%', '100% 100%'],
-                  }}
-                  transition={{
-                    duration: 20,
-                    repeat: Infinity,
-                    ease: 'linear',
-                  }}
-                  style={{
-                    backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px)',
-                    backgroundSize: '50px 50px',
-                  }}
-                />
-              </motion.div>
-
-              {/* Floating decorative elements */}
-              <motion.div
-                className="absolute -top-4 -right-4 w-24 h-24 bg-secondary-300 rounded-lg opacity-30 blur-xl"
-                animate={{
-                  y: [0, -30, 0],
-                  x: [0, 20, 0],
-                }}
-                transition={{
-                  duration: 5,
-                  repeat: Infinity,
-                }}
-              />
-              <motion.div
-                className="absolute -bottom-4 -left-4 w-32 h-32 bg-primary-300 rounded-full opacity-30 blur-xl"
-                animate={{
-                  y: [0, 30, 0],
-                  x: [0, -20, 0],
-                }}
-                transition={{
-                  duration: 6,
-                  repeat: Infinity,
-                }}
-              />
+              <div className="relative rounded-2xl overflow-hidden bg-white dark:bg-[#141c2c] border border-slate-200 dark:border-[var(--border-default)] p-3 shadow-md hover:shadow-lg transition-all duration-300 group">
+                <div className="aspect-[4/5] rounded-xl overflow-hidden bg-slate-100 dark:bg-slate-800 relative">
+                  <img 
+                    src="image.jpg" 
+                    alt="Adham Yahia" 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="pt-4 pb-2 text-center">
+                  <p className="text-base font-bold text-slate-900 dark:text-slate-100">
+                    Adham Yahia
+                  </p>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                    AI Engineer & Full-Stack Web Developer
+                  </p>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>

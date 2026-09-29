@@ -1,140 +1,125 @@
 import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { useInView } from 'react-intersection-observer';
 import { containerVariants, itemVariants } from '../utils/animations';
 import useFeedback from '../hooks/useFeedback';
 
 export const Certificates = () => {
+  const { t } = useTranslation();
   const { triggerClick, triggerHover } = useFeedback();
-  const [selectedCategory, setSelectedCategory] = useState('All');
+  // Default active state set to 'Featured'
+  const [selectedCategory, setSelectedCategory] = useState('Featured');
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
 
   const certificatesData = [
     {
       id: 1,
-      name: 'Introduction to Front-End',
+      name: 'Advanced React', 
       issuer: 'Meta',
       date: 'August 2026',
-      category: ['Web Development','Frontend'],
-      credentialId: 'YXMRJARU2CJC',
-      icon: '☁️',
-      color: 'from-orange-500 via-red-500 to-pink-600',
-      credentialUrl: 'https://www.coursera.org/account/accomplishments/records/YXMRJARU2CJC',
-      bgGlow: 'bg-orange-500/20',
-      description: 'including HTML5, CSS3, Bootstrap, UI design, responsive web layouts, and an introduction to React and modern web development.',
-      image: '/images/certificates/frontend-intro.jpg'
+      category: ['Web Development', 'Frontend'],
+      credentialId: 'NFFQOHQHW4RX',
+      credentialUrl: 'https://www.coursera.org/account/accomplishments/verify/NFFQOHQHW4RX',
+      description: 'Advanced React hooks, custom state handlers, render optimization, memoization, and scalable production architecture.',
+      image: '/images/certificates/advanced-react.jpg',
+      featured: true,
     },
     {
       id: 2,
-      name: 'JavaScript',
+      name: 'Programming in Python',
       issuer: 'Meta',
-      date: 'August 2026',
-      category: ['Web Development','Frontend'],
-      credentialId: 'M6ZYP1NTV55E',
-      credentialUrl: 'https://www.coursera.org/account/accomplishments/records/M6ZYP1NTV55E',
-      icon: '⚡',
-      color: 'from-yellow-400 via-orange-500 to-red-500',
-      bgGlow: 'bg-yellow-500/20',
-      description: 'Advanced JavaScript ES6+ concepts, DOM manipulation, unit testing with Jest, asynchronous programming, and OOP practices.',
-      image: '/images/certificates/javascript.jpg'
+      date: 'March 2026',
+      category: ['Backend', 'AI'],
+      credentialId: 'V9379NM7Q58P',
+      credentialUrl: 'https://www.coursera.org/account/accomplishments/records/V9379NM7Q58P',
+      description: 'Python core programming, object-oriented programming (OOP), data structures, robust error handling, and clean script automation.',
+      image: '/images/certificates/Python-Programming.jpg',
+      featured: true,
     },
     {
       id: 3,
+      name: 'Introduction to Databases',
+      issuer: 'Meta',
+      date: 'March 2026',
+      category: ['Backend', 'Web Development'],
+      credentialId: 'S17UQ96LAFUL',
+      credentialUrl: 'https://www.coursera.org/account/accomplishments/records/S17UQ96LAFUL',
+      description: 'Relational database schema modeling, optimized SQL queries, normalization, and CRUD operations for robust backend services.',
+      image: '/images/certificates/Introduction-to-Databases.jpg',
+      featured: true,
+    },
+    {
+      id: 4,
+      name: 'Introduction to Front-End',
+      issuer: 'Meta',
+      date: 'August 2026',
+      category: ['Web Development', 'Frontend'],
+      credentialId: 'YXMRJARU2CJC',
+      credentialUrl: 'https://www.coursera.org/account/accomplishments/records/YXMRJARU2CJC',
+      description: 'Mastery of HTML5, CSS3, Bootstrap, UI design principles, responsive layouts, and modern web application foundations.',
+      image: '/images/certificates/frontend-intro.jpg',
+      featured: true,
+    },
+    {
+      id: 5,
+      name: 'JavaScript',
+      issuer: 'Meta',
+      date: 'August 2026',
+      category: ['Web Development', 'Frontend'],
+      credentialId: 'M6ZYP1NTV55E',
+      credentialUrl: 'https://www.coursera.org/account/accomplishments/records/M6ZYP1NTV55E',
+      description: 'Advanced JavaScript ES6+ concepts, DOM manipulation, unit testing with Jest, asynchronous programming, and OOP practices.',
+      image: '/images/certificates/javascript.jpg',
+      featured: true,
+    },
+    {
+      id: 6,
+      name: 'HTML and CSS in Depth',
+      issuer: 'Meta',
+      date: 'August 2026',
+      category: ['Web Development', 'Frontend'],
+      credentialId: 'YXMRJARU2CJC',
+      credentialUrl: 'https://www.coursera.org/account/accomplishments/records/YXMRJARU2CJC',
+      description: 'Advanced CSS3 layout architectures, Bootstrap framework, Flexbox, CSS Grid, responsive design, WCAG accessibility, and micro-interactions.',
+      image: '/images/certificates/html-css.jpg',
+      featured: true,
+    },
+    {
+      id: 7,
+      name: 'React Basics',
+      issuer: 'Meta',
+      date: 'August 2026',
+      category: ['Web Development', 'Frontend'],
+      credentialId: '3IFVIKW2LTK3',
+      credentialUrl: 'https://www.coursera.org/account/accomplishments/records/3IFVIKW2LTK3',
+      description: 'Building modular reusable components, state and props architecture, dynamic event-driven UI, and clean responsive web forms.',
+      image: '/images/certificates/react.jpg',
+      featured: false,
+    },
+    {
+      id: 8,
       name: 'Version Control',
       issuer: 'Meta',
       date: 'August 2026',
       category: 'Web Development',
       credentialId: 'GIFOP9BNV5HU',
       credentialUrl: 'https://www.coursera.org/account/accomplishments/records/GIFOP9BNV5HU',
-      icon: '🐙',
-      color: 'from-purple-600 via-indigo-600 to-blue-600',
-      bgGlow: 'bg-purple-500/20',
-      description: 'Linux, Git, GitHub, branch management, and team collaboration workflows.',
-      image: '/images/certificates/version-control.jpg'
-    },
-    {
-      id: 4,
-      name: 'HTML and CSS in Depth',
-      issuer: 'Meta',
-      date: 'August 2026',
-      category: ['Web Development','Frontend'],
-      credentialId: 'YXMRJARU2CJC',
-      credentialUrl: 'https://www.coursera.org/account/accomplishments/records/YXMRJARU2CJC',
-      icon: '⚛️',
-      color: 'from-rose-500 via-pink-500 to-red-500',
-      bgGlow: 'bg-rose-500/20',
-      description: 'Advanced HTML5 & CSS3 layout techniques, Bootstrap framework, Flexbox, CSS Grid, responsive design, web accessibility (WCAG), and animations',
-      image: '/images/certificates/html-css.jpg'
-    },
-    {
-      id: 5,
-      name: 'React Basics',
-      issuer: 'Meta',
-      date: 'August 2026',
-      category: ['Web Development','Frontend'],
-      credentialId: '3IFVIKW2LTK3',
-      credentialUrl: 'https://www.coursera.org/account/accomplishments/records/3IFVIKW2LTK3',
-      icon: '⚛️',
-      color: 'from-blue-500 via-cyan-500 to-blue-600',
-      bgGlow: 'bg-blue-500/20',
-      description: 'including building reusable components, managing data flow using props, designing dynamic user interfaces, and handling form interactions to create scalable and responsive web applications.',
-      image: '/images/certificates/react.jpg'
-    },
-    {
-      id: 6,
-      name: 'Advanced React ', 
-      issuer: 'Meta',
-      date: 'August 2026',
-      category: ['Web Development','Frontend'],
-      credentialId: 'NFFQOHQHW4RX',
-      credentialUrl: 'https://www.coursera.org/account/accomplishments/verify/NFFQOHQHW4RX',
-      icon: '⚛️',
-      color: 'from-blue-500 via-cyan-500 to-blue-600',
-      bgGlow: 'bg-blue-500/20',
-      description: 'Mastered advanced React concepts including hooks, performance optimization, and scalable component patterns to build dynamic web applications',
-      image: '/images/certificates/advanced-react.jpg'
-    },
-    {
-      id: 7,
-      name: 'Introduction to Databases',
-      issuer: 'Meta',
-      date: 'March 2026',
-      category: '["Backend", "Web Development"]',
-      credentialId: 'S17UQ96LAFUL',
-      credentialUrl: 'https://www.coursera.org/account/accomplishments/records/S17UQ96LAFUL',
-      icon: '🎨',
-      color: 'from-purple-500 via-pink-500 to-rose-600',
-      bgGlow: 'bg-purple-500/20',
-      description: 'Mastering relational database design, writing optimized SQL queries, understanding database normalization, and performing CRUD operations to build robust data-driven backend systems.',
-      image: '/images/certificates/Introduction-to-Databases.jpg'
-    },
-    {
-      id: 8,
-      name: 'Programming in Python',
-      issuer: 'Meta',
-      date: 'March 2026',
-      category: '["Backend", "AI"]',
-      credentialId: 'V9379NM7Q58P',
-      credentialUrl: 'https://www.coursera.org/account/accomplishments/records/V9379NM7Q58P',
-      icon: '🌐',
-      color: 'from-purple-500 via-pink-500 to-rose-600',
-      bgGlow: 'bg-purple-500/20',
-      description: 'Learning fundamental Python syntax, object-oriented programming (OOP) concepts, data structures, error handling, and writing clean, scalable scripts to solve real-world development problems.',
-      image: '/images/certificates/Python-Programming.jpg'
+      description: 'Linux command line, Git workflows, GitHub repository collaboration, branch management, and team CI/CD best practices.',
+      image: '/images/certificates/version-control.jpg',
+      featured: false,
     },
     {
       id: 9,
       name: 'Python Programming',
       issuer: 'Mahara-Tech',
       date: 'February 2026',
-      category: ["Backend", "AI"],
+      category: ['Backend', 'AI'],
       credentialId: '38tFyPlFV9',
       credentialUrl: 'https://maharatech.gov.eg/mod/customcert/verify_certificate.php?',
-      icon: '🌐',
-      color: 'from-green-500 via-emerald-500 to-teal-600',
-      bgGlow: 'bg-green-500/20',
-      description: 'Structure proggramming, OOP, algorithm and Data Structure',
-      image: '/images/certificates/python.jpg'
+      description: 'Structured programming, OOP patterns, core algorithms, and foundational computer science data structures.',
+      image: '/images/certificates/python.jpg',
+      featured: false,
     },
     {
       id: 10,
@@ -144,18 +129,27 @@ export const Certificates = () => {
       category: 'Innovation',
       credentialId: 'd1703266-747a-4352-bb08-435c5a1d0a5f',
       credentialUrl: 'https://poweredby.asu.edu/validate-credentials/?token=d1703266-747a-4352-bb08-435c5a1d0a5f&email=ayz304333@gu.edu.eg',
-      icon: '🎨',
-      color: 'from-purple-500 via-pink-500 to-rose-600',
-      bgGlow: 'bg-purple-500/20',
-      description: 'Innovation strategies, design thinking, problem-solving, and creative solution development.',
-      image: '/images/certificates/innovation.jpg'
+      description: 'Innovation engineering, strategic design thinking, agile problem-solving, and creative software solution development.',
+      image: '/images/certificates/innovation.jpg',
+      featured: false,
     },
   ];
 
-  const categories = ['All', 'AI', 'Web Development', 'Frontend', 'Backend'];
+  const categories = ['Featured', 'All', 'AI', 'Web Development', 'Frontend', 'Backend'];
+
+  const getCategoryLabel = (category) => {
+    if (category === 'Featured') return t('certificates.featured', 'Featured');
+    if (category === 'All') return t('certificates.all', 'All');
+    return category;
+  };
 
   const filteredCertificates = useMemo(() => {
-    if (selectedCategory === 'All') return certificatesData;
+    if (selectedCategory === 'Featured') {
+      return certificatesData.filter(cert => cert.featured);
+    }
+    if (selectedCategory === 'All') {
+      return certificatesData;
+    }
     return certificatesData.filter(cert => {
       if (Array.isArray(cert.category)) {
         return cert.category.includes(selectedCategory);
@@ -165,33 +159,12 @@ export const Certificates = () => {
   }, [selectedCategory]);
 
   return (
-    <section 
-      className="relative py-24 overflow-hidden bg-gradient-to-b from-white via-gray-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900" 
+    <section
+      id="certificates"
+      className="py-24 bg-slate-100/70 dark:bg-[var(--bg-primary)] border-y border-slate-200/80 dark:border-slate-800/80 transition-colors duration-300"
       ref={ref}
     >
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          className="absolute top-20 left-10 w-72 h-72 bg-primary-500/10 dark:bg-primary-500/5 rounded-full blur-3xl"
-          animate={{ 
-            x: [0, 50, 0],
-            y: [0, 30, 0],
-            scale: [1, 1.1, 1]
-          }}
-          transition={{ duration: 20, repeat: Infinity }}
-        />
-        <motion.div
-          className="absolute bottom-20 right-10 w-96 h-96 bg-secondary-500/10 dark:bg-secondary-500/5 rounded-full blur-3xl"
-          animate={{ 
-            x: [0, -50, 0],
-            y: [0, -30, 0],
-            scale: [1, 1.2, 1]
-          }}
-          transition={{ duration: 25, repeat: Infinity }}
-        />
-      </div>
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div 
           className="text-center mb-16"
@@ -199,67 +172,63 @@ export const Certificates = () => {
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
         >
-          <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 dark:bg-primary-900/30 rounded-full mb-6">
-            <span className="text-2xl">🎓</span>
-            <span className="text-primary-600 dark:text-primary-400 font-semibold">Professional Growth</span>
+          <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[var(--btn-secondary-bg)] border border-[var(--btn-secondary-border)] rounded-full mb-4 shadow-sm">
+            <span className="text-sm">🎓</span>
+            <span className="text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300">
+              {t('certificates.badge', 'Professional Growth')}
+            </span>
           </motion.div>
 
           <motion.h2 
             variants={itemVariants}
-            className="text-5xl sm:text-6xl font-extrabold mb-6"
+            className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 mb-3"
           >
-            <span className="bg-gradient-to-r from-primary-600 via-secondary-500 to-primary-600 bg-clip-text text-transparent bg-size-200 animate-gradient">
-              Certificates & Achievements
-            </span>
+            {t('certificates.title', 'Certificates & Achievements')}
           </motion.h2>
-          
+          <motion.div 
+            variants={itemVariants} 
+            className="w-12 h-1 bg-slate-900 dark:bg-slate-300 mx-auto rounded-full mb-3"
+          />
           <motion.p 
             variants={itemVariants}
-            className="text-gray-600 dark:text-gray-400 text-xl max-w-3xl mx-auto leading-relaxed"
+            className="text-slate-600 dark:text-slate-400 text-sm sm:text-base max-w-2xl mx-auto"
           >
-            Continuous learning and professional certifications that showcase my commitment to excellence
+            {t('certificates.subtitle', 'Continuous learning and professional certifications demonstrating software engineering excellence')}
           </motion.p>
         </motion.div>
 
-        {/* Category Filter */}
+        {/* Category Filter Buttons - "Featured" is default active, styled with #334155 bg and #475569 border in dark mode */}
         <motion.div 
-          className="mb-14 flex flex-wrap gap-3 justify-center"
+          className="mb-12 flex flex-wrap gap-2.5 justify-center"
           variants={containerVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
         >
-          {categories.map((category, idx) => (
-            <motion.button
-              key={idx}
+          {categories.map((category) => (
+            <button
+              key={category}
               onClick={() => {
                 triggerClick();
                 setSelectedCategory(category);
               }}
               onMouseEnter={triggerHover}
-              className={`group relative px-8 py-3 rounded-2xl font-bold text-sm uppercase tracking-wider transition-all duration-300 ${
+              className={`px-4 py-2 rounded-lg font-medium text-xs tracking-wide transition-all duration-200 select-none flex items-center gap-1.5 ${
                 selectedCategory === category
-                  ? 'text-white shadow-2xl scale-105'
-                  : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:shadow-xl'
+                  ? 'bg-[var(--btn-primary-bg)] text-[var(--btn-primary-text)] border border-[var(--btn-primary-border)] shadow-sm'
+                  : 'bg-[var(--btn-secondary-bg)] text-[var(--btn-secondary-text)] border border-[var(--btn-secondary-border)] hover:border-[var(--btn-secondary-hover-border)] hover:bg-[var(--btn-secondary-hover-bg)]'
               }`}
-              whileHover={{ scale: 1.08 }}
-              whileTap={{ scale: 0.95 }}
-              variants={itemVariants}
             >
-              {selectedCategory === category && (
-                <motion.div
-                  layoutId="activeCategory"
-                  className="absolute inset-0 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl"
-                  transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                />
+              {category === 'Featured' && (
+                <span className="text-amber-400">★</span>
               )}
-              <span className="relative z-10">{category}</span>
-            </motion.button>
+              <span>{getCategoryLabel(category)}</span>
+            </button>
           ))}
         </motion.div>
 
         {/* Certificates Grid */}
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           layout
         >
           <AnimatePresence mode="popLayout">
@@ -267,188 +236,95 @@ export const Certificates = () => {
               <motion.div
                 key={cert.id}
                 layout
-                initial={{ opacity: 0, scale: 0.8, rotateY: -20 }}
-                animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-                exit={{ opacity: 0, scale: 0.8, rotateY: 20 }}
-                transition={{
-                  type: "spring",
-                  stiffness: 400,
-                  damping: 25,
-                  delay: index * 0.08,
-                }}
-                className="group relative perspective-1000 flex"
-                onMouseEnter={triggerHover}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.3, delay: index * 0.04 }}
+                className="group relative flex flex-col justify-between bg-white dark:bg-[var(--bg-card)] rounded-xl border border-slate-200/90 dark:border-[var(--border-default)] shadow-sm hover:shadow-md hover:border-slate-300 dark:hover:border-[var(--border-strong)] hover:-translate-y-1 transition-all duration-300 overflow-hidden"
               >
-                {/* Glow Effect */}
-                <motion.div
-                  className={`absolute -inset-1 ${cert.bgGlow} rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
-                  animate={{
-                    scale: [1, 1.05, 1],
-                  }}
-                  transition={{ duration: 3, repeat: Infinity }}
-                />
-
-                {/* Main Card - h-full ensures all cards match the tallest card in the row */}
-                <motion.div
-                  className="relative w-full h-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl rounded-3xl border-2 border-gray-200/50 dark:border-gray-700/50 overflow-hidden cursor-pointer transform-gpu flex flex-col justify-between"
-                  whileHover={{ 
-                    y: -12, 
-                    rotateX: 5,
-                    rotateY: 5,
-                    boxShadow: '0 25px 50px rgba(99, 102, 241, 0.25)'
-                  }}
-                  onClick={() => triggerClick()}
-                >
-                  {/* Top Content Wrapper */}
-                  <div>
-                    {/* Animated Gradient Background */}
-                    <motion.div
-                      className={`absolute top-0 right-0 w-64 h-64 bg-gradient-to-br ${cert.color} opacity-10 rounded-full blur-3xl`}
-                      animate={{
-                        x: [0, 30, 0],
-                        y: [0, -20, 0],
-                        scale: [1, 1.2, 1]
-                      }}
-                      transition={{ duration: 8, repeat: Infinity }}
-                    />
-
-                    {/* Shimmer Effect */}
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 dark:via-white/10 to-transparent pointer-events-none"
-                      animate={{ x: ['-200%', '200%'] }}
-                      transition={{ duration: 3, repeat: Infinity, repeatDelay: 2 }}
-                    />
-
-                    {/* Certificate Image - Adjusted height to h-[275px] (~70) */}
-                    {cert.image && (
-                      <motion.div 
-                        className="w-full h-[275px] overflow-hidden relative group/img bg-black"
-                        whileHover={{ scale: 1.02 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <img 
-                          src={cert.image} 
-                          alt={cert.name}
-                          className="w-full h-full object-fill transform group-hover/img:scale-105 transition-transform duration-500"
-                          onError={(e) => {
-                            e.target.style.display = 'none';
-                          }}
-                        />
-                      </motion.div>
-                    )}
-
-                    <div className="relative z-10 p-7">
-                      {/* Icon & Badge */}
-                      <div className="flex items-start justify-between mb-4">
-                        <motion.div
-                          className={`relative flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br ${cert.color} text-white text-2xl shadow-lg`}
-                          whileHover={{ rotate: [0, -10, 10, 0], scale: 1.15 }}
-                          transition={{ duration: 0.5 }}
-                        >
-                          {cert.icon}
-                          <motion.div
-                            className="absolute inset-0 rounded-2xl bg-white/20"
-                            animate={{ scale: [1, 1.3, 1], opacity: [0.5, 0, 0.5] }}
-                            transition={{ duration: 2, repeat: Infinity }}
-                          />
-                        </motion.div>
-                        
-                        <motion.div
-                          className={`px-4 py-1.5 bg-gradient-to-r ${cert.color} text-white text-xs font-black rounded-full shadow-md uppercase tracking-wide`}
-                          whileHover={{ scale: 1.1, rotate: 3 }}
-                        >
-                          {Array.isArray(cert.category) ? cert.category[0] : cert.category}
-                        </motion.div>
-                      </div>
-
-                      {/* Title */}
-                      <h3 className="text-2xl font-black text-gray-900 dark:text-white mb-2 leading-tight group-hover:text-primary-500 dark:group-hover:text-primary-400 transition-colors duration-300">
-                        {cert.name}
-                      </h3>
-
-                      {/* Issuer & ID */}
-                      <div className="mb-3">
-                        <p className="text-sm font-bold text-primary-600 dark:text-primary-400 mb-1">
-                          {cert.issuer}
-                        </p>
-                        <p className="text-xs font-mono text-gray-500 dark:text-gray-500 tracking-wider">
-                          ID: {cert.credentialId}
-                        </p>
-                      </div>
-
-                      {/* Description */}
-                      <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
-                        {cert.description}
-                      </p>
+                <div>
+                  {/* Certificate Image Frame - Properly sized & object-contain to prevent cutting off */}
+                  {cert.image && (
+                    <div className="w-full aspect-[4/3] bg-slate-100/90 dark:bg-[#0c121e] border-b border-slate-100 dark:border-[var(--border-subtle)] p-3 flex items-center justify-center relative overflow-hidden group/img">
+                      <img
+                        src={cert.image}
+                        alt={cert.name}
+                        className="max-w-full max-h-full w-auto h-auto object-contain rounded shadow-sm group-hover:scale-[1.02] transition-transform duration-300"
+                        loading="lazy"
+                        onError={(e) => {
+                          e.target.style.display = 'none';
+                        }}
+                      />
+                      {cert.featured && (
+                        <div className="absolute top-2.5 right-2.5 bg-slate-900/90 dark:bg-[#334155]/95 text-amber-300 text-[11px] font-semibold px-2 py-0.5 rounded-md flex items-center gap-1 border border-slate-700 dark:border-[var(--border-strong)] shadow-sm">
+                          <span>★</span>
+                          <span className="text-white text-[10px] uppercase tracking-wider">{t('certificates.featured', 'Featured')}</span>
+                        </div>
+                      )}
                     </div>
-                  </div>
+                  )}
 
-                  {/* Bottom Section (Pushed to the bottom consistently across all cards) */}
-                  <div className="relative z-10 px-7 pb-7 pt-2 mt-auto">
-                    {/* Date & Status */}
-                    <div className="flex items-center justify-between mb-3 pt-3 border-t border-gray-200 dark:border-gray-700">
-                      <div className="flex items-center gap-2">
-                        <motion.div
-                          className="w-2 h-2 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full"
-                          animate={{ scale: [1, 1.4, 1], opacity: [1, 0.5, 1] }}
-                          transition={{ duration: 2, repeat: Infinity }}
-                        />
-                        <span className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest">
-                          {cert.date}
-                        </span>
-                      </div>
-                      <span className="text-xs font-semibold text-green-600 dark:text-green-400 uppercase">
-                        ✓ Verified
+                  <div className="p-5">
+                    {/* Header: Category Badge + Issuer */}
+                    <div className="flex items-center justify-between mb-2.5">
+                      <span className="px-2.5 py-0.5 rounded-md text-xs font-semibold bg-slate-100 dark:bg-[#1a2337] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-[var(--border-subtle)]">
+                        {Array.isArray(cert.category) ? cert.category[0] : cert.category}
+                      </span>
+                      <span className="text-xs font-bold text-slate-500 dark:text-slate-400">
+                        {cert.issuer}
                       </span>
                     </div>
 
-                    {/* CTA Button */}
-                    <motion.button
-                      className="relative w-full py-3 rounded-xl font-bold text-white overflow-hidden group/btn"
-                      whileHover={{ scale: 1.03 }}
-                      whileTap={{ scale: 0.98 }}
-                      onClick={(e) => {
-                        e.stopPropagation();
+                    {/* Title */}
+                    <h3 className="text-base font-bold text-slate-900 dark:text-slate-100 mb-2 group-hover:text-slate-700 dark:group-hover:text-white transition-colors">
+                      {cert.name}
+                    </h3>
+
+                    {/* ID */}
+                    <p className="text-[11px] font-mono text-slate-500 dark:text-slate-400 mb-3">
+                      ID: {cert.credentialId}
+                    </p>
+
+                    {/* Description */}
+                    <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-3">
+                      {cert.description}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Bottom Action Section with Calm Slate Button */}
+                <div className="p-5 pt-0 mt-auto">
+                  <div className="pt-3 border-t border-slate-100 dark:border-[var(--border-subtle)] flex items-center justify-between gap-3">
+                    <span className="text-[11px] font-semibold text-slate-500 dark:text-slate-400">
+                      {cert.date}
+                    </span>
+
+                    <button
+                      onClick={() => {
+                        triggerClick();
                         if (cert.credentialUrl && cert.credentialUrl !== '#') {
                           window.open(cert.credentialUrl, '_blank', 'noopener,noreferrer');
                         }
                       }}
+                      className="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-[var(--btn-primary-bg)] text-[var(--btn-primary-text)] border border-[var(--btn-primary-border)] hover:bg-[var(--btn-primary-hover-bg)] hover:border-[var(--btn-primary-hover-border)] transition-all duration-200 inline-flex items-center gap-1.5 shadow-sm group/btn"
                     >
-                      <div className={`absolute inset-0 bg-gradient-to-r ${cert.color}`} />
-                      <motion.div
-                        className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/30 to-white/0"
-                        animate={{ x: ['-200%', '200%'] }}
-                        transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
-                      />
-                      <span className="relative z-10 flex items-center justify-center gap-2">
-                        View Credential
-                        <motion.span
-                          animate={{ x: [0, 4, 0] }}
-                          transition={{ duration: 1.5, repeat: Infinity }}
-                        >
-                          →
-                        </motion.span>
-                      </span>
-                    </motion.button>
+                      <span>{t('certificates.viewCredential', 'View Credential')}</span>
+                      <span className="ltr:group-hover/btn:translate-x-0.5 rtl:group-hover/btn:-translate-x-0.5 transition-transform">→</span>
+                    </button>
                   </div>
-                </motion.div>
+                </div>
               </motion.div>
             ))}
           </AnimatePresence>
         </motion.div>
 
-        {/* No Results */}
+        {/* Empty state */}
         {filteredCertificates.length === 0 && (
-          <motion.div
-            className="text-center py-16"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-          >
-            <div className="text-6xl mb-4">🔍</div>
-            <p className="text-gray-600 dark:text-gray-400 text-xl font-semibold">
-              No certificates found in this category
+          <div className="text-center py-16">
+            <p className="text-slate-500 dark:text-slate-400 text-sm">
+              No certificates found in this category.
             </p>
-          </motion.div>
+          </div>
         )}
       </div>
     </section>

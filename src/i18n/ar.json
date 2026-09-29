@@ -1,78 +1,111 @@
 {
   "nav": {
     "home": "الرئيسية",
-    "about": "من أنا",
-    "portfolio": "أعمالي",
-    "contact": "اتصل بي",
+    "about": "نبذة عني",
+    "experience": "الخبرات",
+    "certificates": "الشهادات",
+    "portfolio": "الأعمال",
+    "contact": "تواصل معي",
     "toggleTheme": "تبديل المظهر",
     "toggleLanguage": "English"
   },
   "hero": {
-    "greeting": "مرحباً،  أنا",
-    "name": "أدهم يحيى",
-    "title": "مطور ذكاء اصطناعي وتطبيقات ويب متكاملة",
-    "description": "هندسة تطبيقات الذكاء الاصطناعي الذكية وحلول الويب المتكاملة الحديثة.",
+    "greeting": "مرحباً، أنا",
+    "name": "Adham Yahia",
+    "title": "AI Engineer & Full-Stack Web Developer",
+    "description": "تطوير تطبيقات Artificial Intelligence ذكية وحلول Full-Stack Web Development عصرية ومبتكرة.",
     "cta": "تواصل معي",
-    "scroll": "انسحب لتستكشف المزيد"
+    "scroll": "مرر للأسفل للاستكشاف"
   },
   "about": {
-    "title": "من أنا",
-    "description1": "أنا طالب علوم حاسب متخصص في الذكاء الاصطناعي، وشغوف بنقل حلول الذكاء الاصطناعي إلى الواقع من خلال تطوير الويب الكامل (Full-Stack Web Development). أتركز مهاراتي في هندسة تطبيقات متكاملة من البداية للنهاية—بدءاً من بناء واجهات خلفية (Backends) قوية، وواجهات مستخدم حديثة وتفاعلية، وحتى دمج نماذج الذكاء الاصطناعي الذكية بسلاسة داخلها.",
-    "description2": "بدءاً من تدريب نماذج تعلم الآلة (Machine Learning) باستخدام لغة Python، ووصولاً إلى تصميم واجهات برمجة التطبيقات (RESTful APIs) القابلة للتوسع باستخدام Node.js/Express وتطوير واجهات مستخدم سلسة، أركز على بناء حلول رقمية عالية الأداء وموجهة بالبيانات تحقق أثراً حقيقياً وملموساً.",
-    "skills": "المهارات",
-    "skillList": ["React", "JavaScript", "Node.js", "تصميم واجهة المستخدم", "التصميم المستجيب", "أداء الويب", "TypeScript", "Tailwind CSS"]
+    "title": "About Me",
+    "description1": "أنا طالب Computer Science متخصص في مجال Artificial Intelligence، وشغوف بنقل حلول الذكاء الاصطناعي إلى الواقع البرمجي العملي من خلال Full-Stack Web Development. أركز على هندسة تطبيقات متكاملة End-to-End—بدءاً من بناء وتأسيس Backend قوي، وتطوير واجهات Frontend تفاعلية ومتجاوبة، ودمج نماذج AI الذكية بسلاسة داخل الأنظمة.",
+    "description2": "من تدريب نماذج Machine Learning باستخدام Python، إلى تصميم وتطوير RESTful APIs قابلة للتوسع باستخدام Node.js و Express وصياغة واجهات مستخدم متميزة باستخدام React—أحرص دائماً على بناء حلول رقمية عالية الأداء وData-Driven تحقق أثراً واقعياً وملموساً.",
+    "skills": "Technical Skills",
+    "skillList": ["React", "JavaScript", "Node.js", "Python", "UI/UX Design", "Responsive Design", "Web Performance", "TypeScript", "Tailwind CSS"]
+  },
+  "experience": {
+    "title": "Experience",
+    "subtitle": "المسيرة المهنية والتعليمية والأهداف المنجزة"
+  },
+  "certificates": {
+    "badge": "Professional Growth",
+    "title": "Certificates & Achievements",
+    "subtitle": "الشهادات المهنية ومسيرة التعلم المستمر التي تعكس الالتزام بأعلى معايير التميز البرمجي",
+    "featured": "Featured",
+    "all": "All",
+    "viewCredential": "View Credential"
   },
   "portfolio": {
-    "title": "الأعمال المميزة",
+    "title": "Featured Work",
+    "all": "All",
     "projects": [
       {
         "id": 1,
-        "name": "لوحة تحكم حديثة",
-        "description": "لوحة تحكم إدارية سريعة الاستجابة مبنية باستخدام React ومبادئ واجهة المستخدم الحديثة. تتميز بتصور البيانات في الوقت الفعلي وإدارة المستخدمين.",
-        "tags": ["React", "JavaScript", "تصميم واجهة المستخدم"],
-        "image": "/images/projects/little-lemon.jpg"
+        "name": "Little Lemon Restaurant App",
+        "description": "تطبيق ويب متجاوب لمطعم متوسطي، يتميز بقوائم تفاعلية وتصاميم Semantic مدروسة ومكونات UI محسنة الأداء مبنية باستخدام React.",
+        "tags": ["HTML/CSS", "JavaScript", "React"],
+        "image": "/images/projects/little-lemon.jpg",
+        "link": ""
       },
       {
         "id": 2,
-        "name": "منصة التجارة الإلكترونية",
-        "description": "حل التجارة الإلكترونية الكامل مع تكامل الدفع والمصادقة. مبني بالتقنيات الحديثة وأفضل الممارسات.",
-        "tags": ["Full Stack", "قاعدة البيانات", "API"],
-        "image": "/images/projects/ecommerce.jpg"
+        "name": "Dory",
+        "description": "Portfolio شخصي حديث لعرض المهارات التقنية والمشاريع المنفذة ومحطات التعلم المستمر باستخدام React.js و Bootstrap CSS و Canvas.",
+        "tags": ["React.js", "Bootstrap CSS", "Canvas"],
+        "image": "/images/projects/dory.jpg",
+        "link": "https://dory-pi.vercel.app/"
       },
       {
         "id": 3,
-        "name": "مولد محتوى بالذكاء الاصطناعي",
-        "description": "أداة توليد محتوى مدعومة بالتعلم الآلي مع واجهة سهلة الاستخدام وخيارات تخصيص متقدمة.",
-        "tags": ["AI", "Python", "React"],
-        "image": "/images/projects/ai-generator.jpg"
+        "name": "Code Spire",
+        "description": "مجموعة برمجية من الخوارزميات وهياكل البرمجة كائنية التوجه Object-Oriented Programming (OOP) تم بناؤها ضمن المقررات الجامعية.",
+        "tags": ["React.js", "Bootstrap CSS"],
+        "image": "/images/projects/codespire.jpg",
+        "link": "https://codespire-eight.vercel.app/"
+      },
+      {
+        "id": 4,
+        "name": "Hala Coffee",
+        "description": "تطبيق ويب تفاعلي يتميز بواجهات عصرية وتجربة مستخدم سلسة مبني باستخدام React.js و Bootstrap CSS.",
+        "tags": ["React.js", "Bootstrap CSS"],
+        "image": "/images/projects/hala.jpg",
+        "link": "https://hala-coffee.vercel.app/"
       }
     ],
-    "viewProject": "عرض المشروع ←"
+    "viewProject": "View Project"
   },
   "contact": {
-    "title": "دعنا نتواصل",
-    "email": "البريد الإلكتروني",
-    "phone": "الهاتف",
-    "location": "الموقع",
+    "title": "Let's Connect",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
     "emailValue": "adhemyahia2@gmail.com",
     "phoneValue": "+20 101 480 4695",
-    "locationValue": "القاهره، مصر",
+    "locationValue": "القاهرة، مصر",
     "form": {
-      "name": "اسمك",
-      "email": "بريدك الإلكتروني",
+      "name": "الاسم",
+      "email": "البريد الإلكتروني",
       "message": "رسالتك",
       "send": "إرسال الرسالة",
       "sending": "جاري الإرسال...",
-      "success": "تم إرسال الرسالة بنجاح! سنتواصل معك قريباً.",
-      "error": "حدث خطأ في إرسال الرسالة. يرجى المحاولة مرة أخرى."
+      "success": "تم إرسال الرسالة بنجاح! سأتواصل معك في أقرب وقت.",
+      "error": "حدث خطأ أثناء إرسال الرسالة. يرجى المحاولة مرة أخرى."
     }
   },
   "footer": {
-    "copyright": "© 2026 ادهم يحيى. جميع الحقوق محفوظة.",
+    "brandTitle": "Portfolio",
+    "description": "هندسة تطبيقات Artificial Intelligence ذكية وحلول Full-Stack Web Development حديثة.",
+    "quickLinks": "روابط سريعة",
+    "follow": "متابعة",
+    "craftedWith": "صُنع بـ",
+    "using": "باستخدام",
+    "rights": "All Rights Reserved",
+    "copyright": "© 2026 Adham Yahia. All rights reserved.",
     "social": {
-      "twitter": "تويتر",
-      "linkedin": "لينكدان",
-      "github": "جيت هب"
+      "twitter": "Twitter",
+      "linkedin": "LinkedIn",
+      "github": "GitHub"
     }
   }
 }

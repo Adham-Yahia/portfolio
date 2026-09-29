@@ -2,10 +2,12 @@
   "nav": {
     "home": "Home",
     "about": "About",
+    "experience": "Experience",
+    "certificates": "Certificates",
     "portfolio": "Work",
     "contact": "Contact",
     "toggleTheme": "Toggle Theme",
-    "toggleLanguage": "Arabic"
+    "toggleLanguage": "العربية"
   },
   "hero": {
     "greeting": "Hello, I'm",
@@ -19,11 +21,24 @@
     "title": "About Me",
     "description1": "I'm a Computer Science student majoring in Artificial Intelligence, passionate about bringing machine intelligence to life through Full-Stack Web Development. I specialize in engineering end-to-end applications—building robust backends, responsive modern frontends, and seamlessly integrating smart AI models into them.",
     "description2": "From training Machine Learning models in Python to architecting scalable RESTful APIs with Node.js/Express and crafting seamless user interfaces, I focus on building high-performance, data-driven digital solutions that deliver real-world impact.",
-    "skills": "Skills",
-    "skillList": ["React", "JavaScript", "Node.js", "UI/UX Design", "Responsive Design", "Web Performance", "TypeScript", "Tailwind CSS"]
+    "skills": "Technical Skills",
+    "skillList": ["React", "JavaScript", "Node.js", "Python", "UI/UX Design", "Responsive Design", "Web Performance", "TypeScript", "Tailwind CSS"]
+  },
+  "experience": {
+    "title": "Experience",
+    "subtitle": "My professional journey and achievements"
+  },
+  "certificates": {
+    "badge": "Professional Growth",
+    "title": "Certificates & Achievements",
+    "subtitle": "Continuous learning and professional certifications that showcase my commitment to excellence",
+    "featured": "Featured",
+    "all": "All",
+    "viewCredential": "View Credential"
   },
   "portfolio": {
     "title": "Featured Work",
+    "all": "All",
     "projects": [
       {
         "id": 1,
@@ -31,7 +46,7 @@
         "description": "A responsive Mediterranean restaurant web application featuring interactive menus, semantic layouts, and optimized UI components.",
         "tags": ["HTML/CSS", "JavaScript", "React"],
         "image": "/images/projects/little-lemon.jpg",
-        "link":""
+        "link": ""
       },
       {
         "id": 2,
@@ -39,7 +54,7 @@
         "description": "Modern personal portfolio built to showcase technical skills, continuous learning milestones, and deployed web apps.",
         "tags": ["React.js", "Bootstrap CSS", "Canvas"],
         "image": "/images/projects/dory.jpg",
-        "link":"https://dory-pi.vercel.app/"
+        "link": "https://dory-pi.vercel.app/"
       },
       {
         "id": 3,
@@ -47,7 +62,7 @@
         "description": "Collection of core algorithmic scripts and object-oriented programming structures built during university coursework.",
         "tags": ["React.js", "Bootstrap CSS"],
         "image": "/images/projects/codespire.jpg",
-        "link":"https://codespire-eight.vercel.app/"
+        "link": "https://codespire-eight.vercel.app/"
       },
       {
         "id": 4,
@@ -55,10 +70,10 @@
         "description": "Collection of core algorithmic scripts and object-oriented programming structures built during university coursework.",
         "tags": ["React.js", "Bootstrap CSS"],
         "image": "/images/projects/hala.jpg",
-        "link":"https://hala-coffee.vercel.app/"
+        "link": "https://hala-coffee.vercel.app/"
       }
     ],
-    "viewProject": "View Project →"
+    "viewProject": "View Project"
   },
   "contact": {
     "title": "Let's Connect",
@@ -79,6 +94,13 @@
     }
   },
   "footer": {
+    "brandTitle": "Portfolio ",
+    "description": "Engineering intelligent AI applications and modern full-stack web solutions.",
+    "quickLinks": "Quick Links",
+    "follow": "Follow",
+    "craftedWith": "Crafted with",
+    "using": "using",
+    "rights": "All Rights Reserved",
     "copyright": "© 2026 Adham Yahia. All rights reserved.",
     "social": {
       "twitter": "Twitter",

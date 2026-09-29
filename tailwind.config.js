@@ -8,46 +8,54 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: {
-          50: '#f0f4ff',
-          100: '#e6edff',
-          200: '#c7d9ff',
-          300: '#a8c5ff',
-          400: '#7fa3ff',
-          500: '#6366f1',
-          600: '#4f46e5',
-          700: '#4338ca',
-          800: '#3730a3',
-          900: '#312e81',
+        theme: {
+          bg: 'var(--bg-primary)',
+          secondary: 'var(--bg-secondary)',
+          card: 'var(--bg-card)',
+          elevated: 'var(--bg-elevated)',
+          subtle: 'var(--bg-subtle)',
+          border: 'var(--border-default)',
+          'border-subtle': 'var(--border-subtle)',
+          'border-strong': 'var(--border-strong)',
+          'border-elevated': 'var(--border-elevated)',
+          text: 'var(--text-primary)',
+          'text-secondary': 'var(--text-secondary)',
+          'text-muted': 'var(--text-muted)',
+          accent: 'var(--accent)',
+          'accent-hover': 'var(--accent-hover)',
+          'accent-light': 'var(--accent-light)',
+          'accent-subtle': 'var(--accent-subtle)',
         },
-        secondary: {
-          50: '#fdf2f8',
-          100: '#fce7f3',
-          200: '#fbcfe8',
-          300: '#f8b4d6',
-          400: '#f472b6',
-          500: '#ec4899',
-          600: '#db2777',
-          700: '#be185d',
-          800: '#9d174d',
-          900: '#831843',
+        accent: {
+          50: '#eff6ff',
+          100: '#dbeafe',
+          200: '#bfdbfe',
+          300: '#93c5fd',
+          400: '#60a5fa',
+          500: '#3b82f6',
+          600: '#2563eb',
+          700: '#1d4ed8',
+          800: '#1e40af',
+          900: '#1e3a8a',
+        },
+        slate: {
+          850: '#151d2c',
+          925: '#0b0f17',
         }
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        mono: ['Menlo', 'monospace'],
+        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        mono: ['JetBrains Mono', 'Fira Code', 'Menlo', 'monospace'],
       },
       animation: {
-        'fade-in-up': 'fadeInUp 0.8s ease',
-        'float': 'float 3s ease-in-out infinite',
-        'pulse-glow': 'pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'gradient': 'gradient 8s linear infinite',
+        'fade-in-up': 'fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
+        'float': 'float 4s ease-in-out infinite',
       },
       keyframes: {
         fadeInUp: {
           '0%': {
             opacity: '0',
-            transform: 'translateY(30px)',
+            transform: 'translateY(16px)',
           },
           '100%': {
             opacity: '1',
@@ -56,31 +64,8 @@ export default {
         },
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-20px)' },
+          '50%': { transform: 'translateY(-8px)' },
         },
-        'pulse-glow': {
-          '0%, 100%': {
-            opacity: '1',
-            boxShadow: '0 0 20px rgba(99, 102, 241, 0.5)',
-          },
-          '50%': {
-            opacity: '0.5',
-            boxShadow: '0 0 10px rgba(99, 102, 241, 0.3)',
-          },
-        },
-        gradient: {
-          '0%, 100%': {
-            'background-size': '200% 200%',
-            'background-position': 'left center',
-          },
-          '50%': {
-            'background-size': '200% 200%',
-            'background-position': 'right center',
-          },
-        },
-      },
-      backgroundSize: {
-        '200': '200% 200%',
       },
     },
   },

@@ -1,83 +1,79 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { useInView } from 'react-intersection-observer';
-import { containerVariants, itemVariants, scaleInUp } from '../utils/animations';
+import { containerVariants, itemVariants } from '../utils/animations';
 
 export const Experience = () => {
-  const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: true });
+  const { t } = useTranslation();
+  const { ref, inView } = useInView({ threshold: 0.15, triggerOnce: true });
 
   const experiences = [
-      {
-        id: 1,
-        title: 'Independent Web Developer',
-        company: 'Personal Projects & Portfolios',
-        duration: '2024 - Present',
-        description: 'Designed and deployed modern, responsive web applications using React, modern JavaScript, and advanced CSS frameworks.',
-        skills: ['React', 'JavaScript', 'Tailwind CSS'],
-        color: 'from-blue-500 to-cyan-500',
-        icon: '🚀',
-      },
-      {
-        id: 2,
-        title: 'Software Engineering Student',
-        company: 'Galala University',
-        duration: '2024 - 2026',
-        description: 'Building academic and practical backend foundations, applying Object-Oriented Programming (OOP) in Python, and integrating Node.js servers.',
-        skills: ['Python', 'Node.js', 'OOP'],
-        color: 'from-green-500 to-emerald-500',
-        icon: '⚙️',
-      },
-      {
-        id: 3,
-        title: 'Certified Frontend Track',
-        company: 'Coursera & Meta Professional Tracks',
-        duration: '2025 - 2026',
-        description: 'Completed professional certification paths focusing on HTML/CSS in depth, UI principles, and Version Control workflows.',
-        skills: ['HTML/CSS', 'Git', 'UI/UX'],
-        color: 'from-purple-500 to-pink-500',
-        icon: '💻',
-      },
-    ];
+    {
+      id: 1,
+      title: 'Independent Web Developer',
+      company: 'Personal Projects & Client Solutions',
+      duration: '2024 - Present',
+      description: 'Designing and engineering modern, responsive full-stack applications with React, modern JavaScript, Tailwind CSS, and scalable RESTful backends.',
+      skills: ['React', 'JavaScript', 'Tailwind CSS', 'Node.js'],
+      icon: '🚀',
+    },
+    {
+      id: 2,
+      title: 'Computer Science & AI Major',
+      company: 'Galala University',
+      duration: '2024 - Present',
+      description: 'Strengthening academic and practical foundations in Artificial Intelligence, Object-Oriented Programming (OOP) in Python, Algorithms, Data Structures, and Database Management.',
+      skills: ['Python', 'AI/ML', 'OOP', 'Data Structures'],
+      icon: '⚙️',
+    },
+    {
+      id: 3,
+      title: 'Certified Frontend Specialization',
+      company: 'Meta & Coursera Professional Tracks',
+      duration: '2025 - 2026',
+      description: 'Completed in-depth professional engineering tracks focusing on Advanced React, JavaScript ES6+, UI/UX architecture, responsive layouts, and Git version control workflows.',
+      skills: ['React', 'HTML5/CSS3', 'Git & GitHub', 'UI/UX'],
+      icon: '💻',
+    },
+  ];
 
   return (
-    <section className="py-20 bg-white dark:bg-gray-900 transition-colors duration-300" ref={ref}>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="experience" className="py-24 bg-slate-50 dark:bg-[var(--bg-primary)] transition-colors duration-300" ref={ref}>
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           variants={containerVariants}
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
         >
-          <motion.h2 
+          <motion.h2
             variants={itemVariants}
-            className="text-4xl sm:text-5xl font-bold mb-4"
+            className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 mb-3"
           >
-            <span className="bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent">
-              Experience
-            </span>
+            {t('experience.title', 'Experience')}
           </motion.h2>
-          <motion.p 
+          <motion.div
             variants={itemVariants}
-            className="text-gray-600 dark:text-gray-400 text-lg"
+            className="w-12 h-1 bg-blue-600 dark:bg-blue-400 mx-auto rounded-full"
+          />
+          <motion.p
+            variants={itemVariants}
+            className="text-slate-600 dark:text-slate-400 text-sm sm:text-base max-w-xl mx-auto mt-3"
           >
-            My professional journey and achievements
+            {t('experience.subtitle', 'My professional journey and achievements')}
           </motion.p>
         </motion.div>
 
         {/* Timeline */}
         <div className="relative">
           {/* Vertical line */}
-          <motion.div 
-            className="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary-500 via-secondary-500 to-primary-500 transform -translate-x-1/2"
-            initial={{ height: 0 }}
-            animate={inView ? { height: '100%' } : { height: 0 }}
-            transition={{ duration: 1.5, ease: 'easeOut' }}
-          />
+          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-slate-200 dark:bg-[var(--border-subtle)] -translate-x-1/2" />
 
           {/* Experience items */}
-          <motion.div 
-            className="space-y-8 md:space-y-0"
+          <motion.div
+            className="space-y-10 md:space-y-12"
             variants={containerVariants}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
@@ -86,104 +82,50 @@ export const Experience = () => {
               <motion.div
                 key={exp.id}
                 variants={itemVariants}
-                className={`md:flex md:gap-8 mb-8 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
+                className={`md:flex md:items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                  }`}
               >
-                {/* Content */}
-                <div className="md:w-1/2">
-                  <motion.div
-                    className="relative bg-gradient-to-br from-white/50 to-white/30 dark:from-gray-800/50 dark:to-gray-800/30 backdrop-blur-xl border border-white/20 dark:border-gray-700/20 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all group cursor-pointer"
-                    whileHover={{ y: -5, scale: 1.02 }}
-                    initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                    animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                    transition={{ delay: index * 0.2 }}
-                  >
-                    {/* Glassmorphism shine effect */}
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 rounded-xl opacity-0 group-hover:opacity-100"
-                      animate={{
-                        x: ['-100%', '100%'],
-                      }}
-                      transition={{
-                        duration: 2,
-                        repeat: Infinity,
-                      }}
-                    />
-
-                    <div className="relative z-10">
-                      {/* Header */}
-                      <div className="flex items-start justify-between mb-4">
-                        <div>
-                          <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1">
-                            {exp.title}
-                          </h3>
-                          <p className="text-sm font-semibold text-primary-600 dark:text-primary-400">
-                            {exp.company}
-                          </p>
-                        </div>
-                        <motion.div 
-                          className={`text-3xl p-3 rounded-lg bg-gradient-to-br ${exp.color} text-white`}
-                          whileHover={{ rotate: 10, scale: 1.1 }}
-                        >
-                          {exp.icon}
-                        </motion.div>
+                {/* Content Card */}
+                <div className="md:w-1/2 md:px-8">
+                  <div className="bg-white dark:bg-[#121824] rounded-xl p-6 border border-slate-200/80 dark:border-[var(--border-default)] hover:border-blue-500/50 dark:hover:border-blue-400/50 hover:shadow-md hover:-translate-y-1 transition-all duration-300 shadow-sm group">
+                    <div className="flex items-start justify-between mb-3 gap-3">
+                      <div>
+                        <h3 className="text-lg font-bold text-slate-900 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                          {exp.title}
+                        </h3>
+                        <p className="text-xs font-semibold text-slate-500 dark:text-slate-400">
+                          {exp.company}
+                        </p>
                       </div>
-
-                      {/* Duration */}
-                      <p className="text-xs font-semibold text-gray-600 dark:text-gray-400 mb-3 tracking-widest uppercase">
+                      <span className="text-xs font-mono px-2.5 py-1 rounded-full bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-300 border border-blue-200/60 dark:border-blue-900/60 whitespace-nowrap">
                         {exp.duration}
-                      </p>
-
-                      {/* Description */}
-                      <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-                        {exp.description}
-                      </p>
-
-                      {/* Skills */}
-                      <div className="flex flex-wrap gap-2">
-                        {exp.skills.map((skill, idx) => (
-                          <motion.span
-                            key={idx}
-                            className={`px-3 py-1 bg-gradient-to-r ${exp.color} text-white text-xs font-semibold rounded-full`}
-                            whileHover={{ scale: 1.1 }}
-                            initial={{ scale: 0 }}
-                            animate={{ scale: 1 }}
-                            transition={{ delay: idx * 0.05 + index * 0.1 }}
-                          >
-                            {skill}
-                          </motion.span>
-                        ))}
-                      </div>
+                      </span>
                     </div>
-                  </motion.div>
+
+                    <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                      {exp.description}
+                    </p>
+
+                    <div className="flex flex-wrap gap-1.5">
+                      {exp.skills.map((skill, idx) => (
+                        <span
+                          key={idx}
+                          className="px-2.5 py-0.5 rounded-md text-xs font-medium bg-slate-100 dark:bg-[#162032] text-slate-700 dark:text-slate-300 border border-slate-200/60 dark:border-[var(--border-subtle)]"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
 
-                {/* Timeline dot */}
+                {/* Timeline center indicator */}
                 <div className="hidden md:flex md:w-auto md:items-center md:justify-center">
-                  <motion.div
-                    className="relative w-6 h-6"
-                    initial={{ scale: 0 }}
-                    animate={inView ? { scale: 1 } : { scale: 0 }}
-                    transition={{ delay: index * 0.2 + 0.3, type: 'spring' }}
-                  >
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full"
-                      animate={{
-                        boxShadow: [
-                          '0 0 0 0 rgba(99, 102, 241, 0.7)',
-                          '0 0 0 10px rgba(99, 102, 241, 0)',
-                        ],
-                      }}
-                      transition={{
-                        duration: 2,
-                        repeat: Infinity,
-                      }}
-                    />
-                    <div className="absolute inset-1 bg-white dark:bg-gray-900 rounded-full" />
-                  </motion.div>
+                  <div className="w-4 h-4 rounded-full bg-white dark:bg-[#0b0f17] border-2 border-blue-600 dark:border-blue-400 shadow-sm z-10" />
                 </div>
 
-                {/* Mobile spacer */}
-                <div className="md:hidden w-1/2" />
+                {/* Empty space for opposite side */}
+                <div className="hidden md:block md:w-1/2 md:px-8" />
               </motion.div>
             ))}
           </motion.div>
