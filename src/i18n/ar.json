@@ -11,56 +11,95 @@
   },
   "hero": {
     "greeting": "مرحباً، أنا",
-    "name": "Adham Yahia",
-    "title": "AI Engineer & Full-Stack Web Developer",
-    "description": "تطوير تطبيقات Artificial Intelligence ذكية وحلول Full-Stack Web Development عصرية ومبتكرة.",
+    "name": "أدهم يحيى",
+    "title": "مهندس ذكاء اصطناعي ومطور ويب متكامل",
+    "description": "هندسة تطبيقات ذكاء اصطناعي ذكية وحلول ويب حديثة ومبتكرة.",
     "cta": "تواصل معي",
     "scroll": "مرر للأسفل للاستكشاف"
   },
   "about": {
-    "title": "About Me",
-    "description1": "أنا طالب Computer Science متخصص في مجال Artificial Intelligence، وشغوف بنقل حلول الذكاء الاصطناعي إلى الواقع البرمجي العملي من خلال Full-Stack Web Development. أركز على هندسة تطبيقات متكاملة End-to-End—بدءاً من بناء وتأسيس Backend قوي، وتطوير واجهات Frontend تفاعلية ومتجاوبة، ودمج نماذج AI الذكية بسلاسة داخل الأنظمة.",
-    "description2": "من تدريب نماذج Machine Learning باستخدام Python، إلى تصميم وتطوير RESTful APIs قابلة للتوسع باستخدام Node.js و Express وصياغة واجهات مستخدم متميزة باستخدام React—أحرص دائماً على بناء حلول رقمية عالية الأداء وData-Driven تحقق أثراً واقعياً وملموساً.",
-    "skills": "Technical Skills",
-    "skillList": ["React", "JavaScript", "Node.js", "Python", "UI/UX Design", "Responsive Design", "Web Performance", "TypeScript", "Tailwind CSS"]
+    "title": "نبذة عني",
+    "description1": "أنا طالب علوم الحاسوب متخصص في مجال الذكاء الاصطناعي، وشغوف بنقل حلول الذكاء الاصطناعي إلى الواقع البرمجي العملي من خلال تطوير الويب المتكامل. أركز على هندسة تطبيقات متكاملة—بدءاً من بناء وتأسيس Backend قوي، وتطوير واجهات Frontend تفاعلية ومتجاوبة، ودمج نماذج الذكاء الاصطناعي بسلاسة داخل الأنظمة.",
+    "description2": "من تدريب نماذج التعلم الآلي باستخدام Python، إلى تصميم وتطوير واجهات برمجة التطبيقات القابلة للتوسع باستخدام Node.js و Express وصياغة واجهات مستخدم متميزة باستخدام React—أحرص دائماً على بناء حلول رقمية عالية الأداء تعتمد على البيانات وتحقق أثراً واقعياً وملموساً.",
+    "skills": "المهارات التقنية",
+    "skillList": ["React", "JavaScript", "Python", "UI/UX Design", "Responsive Design", "Web Performance"],
+    "skillCategories": {
+      "ai": "الذكاء الاصطناعي وهندسة البيانات",
+      "frontend": "تطوير الواجهات الأمامية",
+      "backend": "الواجهات الخلفية والأنظمة",
+      "tools": "سير العمل والأدوات"
+    }
   },
   "experience": {
-    "title": "Experience",
-    "subtitle": "المسيرة المهنية والتعليمية والأهداف المنجزة"
+    "title": "الخبرات",
+    "subtitle": "المسيرة المهنية والتعليمية والأهداف المنجزة",
+    "items": [
+      {
+        "title": "مطور ويب مستقل",
+        "company": "مشاريع شخصية وحلول للعملاء",
+        "duration": "2026 - حتى الآن",
+        "description": "تصميم وهندسة تطبيقات Full-Stack حديثة ومتجاوبة باستخدام React و JavaScript  و Backends قابلة للتوسع.",
+        "skills": ["React", "JavaScript", "HTML5/CSS3"]
+      },
+      {
+        "title": "طالب علوم الحاسوب وتخصص ذكاء اصطناعي",
+        "company": "جامعة الجلالة",
+        "duration": "2025 - حتى الآن",
+        "description": "تقوية الأساسيات الأكاديمية والعملية في مجال الذكاء الاصطناعي والبرمجة كائنية التوجه في Python والخوارزميات وهياكل البيانات وإدارة قواعد البيانات.",
+        "skills": ["Python", "OOP", "Data Structures"]
+      },
+      {
+        "title": "تخصص Frontend معتمد",
+        "company": "Meta و Coursera Professional Tracks",
+        "duration": "2026 - حتى الان",
+        "description": "إكمال مسارات هندسة احترافية متعمقة تركز على React المتقدم و JavaScript ES6+ وهندسة UI/UX والتخطيطات المتجاوبة وسير عمل Git لإدارة الإصدارات.",
+        "skills": ["React", "HTML5/CSS3", "Git & GitHub", "UI/UX"]
+      }
+    ]
   },
   "certificates": {
-    "badge": "Professional Growth",
-    "title": "Certificates & Achievements",
+    "badge": "النمو المهني",
+    "title": "الشهادات والإنجازات",
     "subtitle": "الشهادات المهنية ومسيرة التعلم المستمر التي تعكس الالتزام بأعلى معايير التميز البرمجي",
-    "featured": "Featured",
-    "all": "All",
-    "viewCredential": "View Credential"
+    "featured": "مميز",
+    "all": "الكل",
+    "viewCredential": "عرض الشهادة"
   },
   "portfolio": {
-    "title": "Featured Work",
-    "all": "All",
+    "title": "أعمال مميزة",
+    "all": "الكل",
+    "categories": {
+      "all": "الكل",
+      "ai": "ذكاء اصطناعي",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "fullstack": "Full-Stack"
+    },
     "projects": [
       {
         "id": 1,
         "name": "Little Lemon Restaurant App",
-        "description": "تطبيق ويب متجاوب لمطعم متوسطي، يتميز بقوائم تفاعلية وتصاميم Semantic مدروسة ومكونات UI محسنة الأداء مبنية باستخدام React.",
+        "description": "تطبيق ويب متجاوب لمطعم متوسطي، يتميز بقوائم تفاعلية وتصاميم دلالية مدروسة ومكونات واجهة مستخدم محسنة الأداء مبنية باستخدام React.",
         "tags": ["HTML/CSS", "JavaScript", "React"],
+        "categories": ["frontend", "fullstack"],
         "image": "/images/projects/little-lemon.jpg",
         "link": ""
       },
       {
         "id": 2,
         "name": "Dory",
-        "description": "Portfolio شخصي حديث لعرض المهارات التقنية والمشاريع المنفذة ومحطات التعلم المستمر باستخدام React.js و Bootstrap CSS و Canvas.",
+        "description": "معرض أعمال شخصي حديث لعرض المهارات التقنية والمشاريع المنفذة ومحطات التعلم المستمر باستخدام React.js و Bootstrap CSS و Canvas.",
         "tags": ["React.js", "Bootstrap CSS", "Canvas"],
+        "categories": ["frontend", "fullstack"],
         "image": "/images/projects/dory.jpg",
         "link": "https://dory-pi.vercel.app/"
       },
       {
         "id": 3,
         "name": "Code Spire",
-        "description": "مجموعة برمجية من الخوارزميات وهياكل البرمجة كائنية التوجه Object-Oriented Programming (OOP) تم بناؤها ضمن المقررات الجامعية.",
+        "description": "مجموعة برمجية من الخوارزميات وهياكل البرمجة كائنية التوجه تم بناؤها ضمن المقررات الجامعية.",
         "tags": ["React.js", "Bootstrap CSS"],
+        "categories": ["frontend"],
         "image": "/images/projects/codespire.jpg",
         "link": "https://codespire-eight.vercel.app/"
       },
@@ -69,17 +108,18 @@
         "name": "Hala Coffee",
         "description": "تطبيق ويب تفاعلي يتميز بواجهات عصرية وتجربة مستخدم سلسة مبني باستخدام React.js و Bootstrap CSS.",
         "tags": ["React.js", "Bootstrap CSS"],
+        "categories": ["frontend", "fullstack"],
         "image": "/images/projects/hala.jpg",
         "link": "https://hala-coffee.vercel.app/"
       }
     ],
-    "viewProject": "View Project"
+    "viewProject": "عرض المشروع"
   },
   "contact": {
-    "title": "Let's Connect",
-    "email": "Email",
-    "phone": "Phone",
-    "location": "Location",
+    "title": "لنتواصل",
+    "email": "البريد الإلكتروني",
+    "phone": "الهاتف",
+    "location": "الموقع",
     "emailValue": "adhemyahia2@gmail.com",
     "phoneValue": "+20 101 480 4695",
     "locationValue": "القاهرة، مصر",
@@ -95,15 +135,14 @@
   },
   "footer": {
     "brandTitle": "Portfolio",
-    "description": "هندسة تطبيقات Artificial Intelligence ذكية وحلول Full-Stack Web Development حديثة.",
+    "description": "هندسة تطبيقات ذكاء اصطناعي ذكية وحلول ويب حديثة ومبتكرة.",
     "quickLinks": "روابط سريعة",
     "follow": "متابعة",
     "craftedWith": "صُنع بـ",
     "using": "باستخدام",
-    "rights": "All Rights Reserved",
-    "copyright": "© 2026 Adham Yahia. All rights reserved.",
+    "rights": "جميع الحقوق محفوظة",
+    "copyright": "© ٢٠٢٦ أدهم يحيى. جميع الحقوق محفوظة.",
     "social": {
-      "twitter": "Twitter",
       "linkedin": "LinkedIn",
       "github": "GitHub"
     }

@@ -84,7 +84,7 @@ export const Contact = () => {
   `;
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-primary-50 via-white to-secondary-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors duration-300" ref={ref}>
+    <section id="contact" className="section-shell section-shell--muted transition-colors duration-300" ref={ref}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
         <motion.div 
@@ -97,7 +97,7 @@ export const Contact = () => {
             variants={itemVariants}
             className="text-4xl sm:text-5xl font-bold mb-4"
           >
-            <span className="bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent">
+            <span className="text-[var(--text-primary)]">
               {t('contact.title')}
             </span>
           </motion.h2>
@@ -285,7 +285,7 @@ export const Contact = () => {
               <motion.button
                 type="submit"
                 disabled={loading}
-                className="w-full px-6 py-3 bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-bold rounded-lg shadow-lg disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden group"
+                className="flat-button w-full px-6 py-3 disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden group"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -301,12 +301,6 @@ export const Contact = () => {
                     t('contact.form.send')
                   )}
                 </motion.span>
-                <motion.div 
-                  className="absolute inset-0 bg-gradient-to-r from-secondary-600 to-primary-600"
-                  initial={{ x: '100%' }}
-                  whileHover={{ x: 0 }}
-                  transition={{ duration: 0.3 }}
-                />
               </motion.button>
             </motion.div>
 

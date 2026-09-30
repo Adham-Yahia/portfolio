@@ -36,3 +36,6 @@ Thumbs.db
 tmp/
 temp/
 *.tmp
+
+# Private working notes (keep local; never publish to GitHub)
+notes_internal.md

@@ -20,7 +20,7 @@ function AppContent() {
   }, [i18n.language]);
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-[#0b0f17] text-slate-900 dark:text-slate-100 selection:bg-blue-500/20 selection:text-blue-900 dark:selection:text-blue-100 transition-colors duration-300">
+    <div className="site-shell min-h-screen transition-colors duration-300">
       <Navbar />
       <Hero />
       <About />

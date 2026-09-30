@@ -22,11 +22,40 @@
     "description1": "I'm a Computer Science student majoring in Artificial Intelligence, passionate about bringing machine intelligence to life through Full-Stack Web Development. I specialize in engineering end-to-end applications—building robust backends, responsive modern frontends, and seamlessly integrating smart AI models into them.",
     "description2": "From training Machine Learning models in Python to architecting scalable RESTful APIs with Node.js/Express and crafting seamless user interfaces, I focus on building high-performance, data-driven digital solutions that deliver real-world impact.",
     "skills": "Technical Skills",
-    "skillList": ["React", "JavaScript", "Node.js", "Python", "UI/UX Design", "Responsive Design", "Web Performance", "TypeScript", "Tailwind CSS"]
+    "skillList": ["React", "JavaScript", "Python", "UI/UX Design", "Responsive Design", "Web Performance"],
+    "skillCategories": {
+      "ai": "AI & Data Engineering",
+      "frontend": "Frontend Development",
+      "backend": "Backend & Systems",
+      "tools": "Workflow & Tools"
+    }
   },
   "experience": {
     "title": "Experience",
-    "subtitle": "My professional journey and achievements"
+    "subtitle": "My professional journey and achievements",
+    "items": [
+      {
+        "title": "Independent Web Developer",
+        "company": "Personal Projects & Client Solutions",
+        "duration": "2026 - Present",
+        "description": "Designing and engineering modern, responsive full-stack applications with React, modern JavaScript, Tailwind CSS, and scalable RESTful backends.",
+        "skills": ["React", "JavaScript", "HTML/CSS"]
+      },
+      {
+        "title": "Computer Science & AI Major",
+        "company": "Galala University",
+        "duration": "2025 - Present",
+        "description": "Strengthening academic and practical foundations in Artificial Intelligence, Object-Oriented Programming (OOP) in Python, Algorithms, Data Structures, and Database Management.",
+        "skills": ["Python", "OOP", "Data Structures"]
+      },
+      {
+        "title": "Certified Frontend Specialization",
+        "company": "Meta & Coursera Professional Tracks",
+        "duration": "2026 - Present",
+        "description": "Completed in-depth professional engineering tracks focusing on Advanced React, JavaScript ES6+, UI/UX architecture, responsive layouts, and Git version control workflows.",
+        "skills": ["React", "HTML5/CSS3", "Git & GitHub", "UI/UX"]
+      }
+    ]
   },
   "certificates": {
     "badge": "Professional Growth",
@@ -39,12 +68,20 @@
   "portfolio": {
     "title": "Featured Work",
     "all": "All",
+    "categories": {
+      "all": "All",
+      "ai": "AI",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "fullstack": "Full-Stack"
+    },
     "projects": [
       {
         "id": 1,
         "name": "Little Lemon Restaurant App",
         "description": "A responsive Mediterranean restaurant web application featuring interactive menus, semantic layouts, and optimized UI components.",
         "tags": ["HTML/CSS", "JavaScript", "React"],
+        "categories": ["frontend", "fullstack"],
         "image": "/images/projects/little-lemon.jpg",
         "link": ""
       },
@@ -53,6 +90,7 @@
         "name": "Dory",
         "description": "Modern personal portfolio built to showcase technical skills, continuous learning milestones, and deployed web apps.",
         "tags": ["React.js", "Bootstrap CSS", "Canvas"],
+        "categories": ["frontend", "fullstack"],
         "image": "/images/projects/dory.jpg",
         "link": "https://dory-pi.vercel.app/"
       },
@@ -61,6 +99,7 @@
         "name": "Code Spire",
         "description": "Collection of core algorithmic scripts and object-oriented programming structures built during university coursework.",
         "tags": ["React.js", "Bootstrap CSS"],
+        "categories": ["frontend"],
         "image": "/images/projects/codespire.jpg",
         "link": "https://codespire-eight.vercel.app/"
       },
@@ -69,6 +108,7 @@
         "name": "Hala Coffee",
         "description": "Collection of core algorithmic scripts and object-oriented programming structures built during university coursework.",
         "tags": ["React.js", "Bootstrap CSS"],
+        "categories": ["frontend", "fullstack"],
         "image": "/images/projects/hala.jpg",
         "link": "https://hala-coffee.vercel.app/"
       }
@@ -103,7 +143,6 @@
     "rights": "All Rights Reserved",
     "copyright": "© 2026 Adham Yahia. All rights reserved.",
     "social": {
-      "twitter": "Twitter",
       "linkedin": "LinkedIn",
       "github": "GitHub"
     }

@@ -1,130 +1,103 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { containerVariants, itemVariants } from '../utils/animations';
 
 export const About = () => {
   const { t } = useTranslation();
-  const { ref, inView } = useInView({ threshold: 0.15, triggerOnce: true });
 
   const skillCategories = [
     {
-      category: 'AI & Data Engineering',
+      category: t('about.skillCategories.ai', 'AI & Data Engineering'),
+      tone: 'ai',
       skills: ['Python', 'OOP'],
     },
     {
-      category: 'Frontend Development',
+      category: t('about.skillCategories.frontend', 'Frontend Development'),
+      tone: 'frontend',
       skills: ['React', 'JavaScript (ES6+)', 'Bootstrap CSS', 'HTML5 / CSS3', 'Responsive Design', 'Web Accessibility (WCAG)'],
     },
     {
-      category: 'Backend & Systems',
+      category: t('about.skillCategories.backend', 'Backend & Systems'),
+      tone: 'backend',
       skills: ['Python', 'Django', 'RESTful APIs', 'MySQL & Databases', 'APIs Architecture'],
     },
     {
-      category: 'Workflow & Tools',
+      category: t('about.skillCategories.tools', 'Workflow & Tools'),
+      tone: 'tools',
       skills: ['Git & GitHub', 'Version Control', 'Linux / Unix', 'Command Line (Bash)', 'UI/UX Principles', 'Web Performance'],
     },
   ];
 
   return (
-    <section id="about" className="py-24 bg-slate-100/70 dark:bg-[var(--bg-primary)] border-y border-slate-200/80 dark:border-[var(--border-subtle)] transition-colors duration-300" ref={ref}>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Title */}
-        <motion.div 
-          className="text-center mb-16"
-          variants={containerVariants}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-        >
-          <motion.h2 
-            variants={itemVariants}
-            className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 mb-3"
-          >
+    <section id="about" className="section-shell section-shell--muted transition-colors duration-300">
+      <div className="section-container">
+        <div className="section-heading">
+          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[var(--text-primary)] mb-3">
             {t('about.title')}
-          </motion.h2>
-          <motion.div 
-            variants={itemVariants} 
-            className="w-12 h-1 bg-blue-600 dark:bg-blue-400 mx-auto rounded-full"
-          />
-        </motion.div>
+          </h2>
+          <div className="section-rule" />
+        </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          {/* Text Content & Skills */}
-          <motion.div 
-            className="lg:col-span-7 space-y-6"
-            variants={containerVariants}
-            initial="hidden"
-            animate={inView ? "visible" : "hidden"}
-          >
-            <motion.p 
-              variants={itemVariants}
-              className="text-base sm:text-lg text-slate-700 dark:text-slate-300 leading-relaxed font-normal"
-            >
-              {t('about.description1')}
-            </motion.p>
-            <motion.p 
-              variants={itemVariants}
-              className="text-base sm:text-lg text-slate-700 dark:text-slate-300 leading-relaxed font-normal"
-            >
-              {t('about.description2')}
-            </motion.p>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          <div className="lg:col-span-8 space-y-8 order-1 lg:order-1">
+            <div className="space-y-5">
+              <p className="text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed font-normal">
+                {t('about.description1')}
+              </p>
+              <p className="text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed font-normal">
+                {t('about.description2')}
+              </p>
+            </div>
 
-            {/* Skills Categorized with Enhanced Interactive Pills */}
-            <motion.div variants={itemVariants} className="pt-6 space-y-6">
-              <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-                {t('about.skills', 'Technical Skills')}
-              </h3>
+            <div className="space-y-6">
+              <div className="flex items-center gap-3">
+                <div className="h-px flex-1 bg-[var(--border-subtle)]" />
+                <h3 className="text-xs font-bold uppercase tracking-widest text-[var(--text-muted)] whitespace-nowrap">
+                  {t('about.skills', 'Technical Skills')}
+                </h3>
+                <div className="h-px flex-1 bg-[var(--border-subtle)]" />
+              </div>
 
-              <div className="space-y-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 {skillCategories.map((group, idx) => (
-                  <div key={idx} className="space-y-2.5">
-                    <span className="text-xs font-semibold text-slate-900 dark:text-slate-200">
+                  <article
+                    key={idx}
+                    className={`surface-card skill-card skill-card--${group.tone}`}
+                  >
+                    <h4 className="skill-card__title">
+                      <span className="skill-card__mark" aria-hidden="true" />
                       {group.category}
-                    </span>
+                    </h4>
                     <div className="flex flex-wrap gap-2">
                       {group.skills.map((skill, sidx) => (
                         <span
                           key={sidx}
-                          className="px-3 py-1.5 rounded-lg bg-white dark:bg-[#162032] text-slate-700 dark:text-slate-200 text-xs font-medium border border-slate-200 dark:border-[var(--border-subtle)] shadow-sm hover:border-blue-500/50 dark:hover:border-blue-400/50 hover:text-blue-600 dark:hover:text-blue-400 hover:-translate-y-0.5 hover:shadow transition-all duration-200 select-none cursor-default"
+                          className="tag px-2.5 py-1.5 select-none cursor-default"
                         >
                           {skill}
                         </span>
                       ))}
                     </div>
-                  </div>
+                  </article>
                 ))}
               </div>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
 
-          {/* Profile Card Frame */}
-          <motion.div 
-            className="lg:col-span-5 flex justify-center"
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <div className="relative w-full max-w-sm">
-              <div className="relative rounded-2xl overflow-hidden bg-white dark:bg-[#141c2c] border border-slate-200 dark:border-[var(--border-default)] p-3 shadow-md hover:shadow-lg transition-all duration-300 group">
-                <div className="aspect-[4/5] rounded-xl overflow-hidden bg-slate-100 dark:bg-slate-800 relative">
-                  <img 
-                    src="image.jpg" 
-                    alt="Adham Yahia" 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div className="pt-4 pb-2 text-center">
-                  <p className="text-base font-bold text-slate-900 dark:text-slate-100">
-                    Adham Yahia
-                  </p>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                    AI Engineer & Full-Stack Web Developer
-                  </p>
-                </div>
+          <div className="lg:col-span-4 flex flex-col items-center lg:items-end space-y-6 order-2 lg:order-2">
+            <div className="surface-card w-full max-w-xs lg:max-w-full rounded-2xl p-3 group">
+              <div className="aspect-square overflow-hidden rounded-xl bg-[var(--bg-subtle)]">
+                <img
+                  src="/image.jpg"
+                  alt="Adham Yahia"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                />
+              </div>
+              <div className="px-4 py-4 text-center">
+                <h3 className="text-lg font-bold text-[var(--text-primary)]">Adham Yahia</h3>
+                <p className="mt-1 text-xs font-medium text-[var(--text-muted)]">AI Engineer & Full-Stack Web Developer</p>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

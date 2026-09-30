@@ -1,345 +1,176 @@
-# Personal Portfolio Website v2.0
+# Adham Yahia — Portfolio
 
-A modern, responsive personal portfolio website built with React, featuring dark mode, multi-language support (Arabic/English), and a Node.js/Express backend.
+A responsive, bilingual portfolio for an AI Engineer and Full-Stack Web Developer. The interface supports English and Arabic (including right-to-left layout) and persistent light and dark themes with a moody, professional aesthetic.
 
-## 🚀 Features
-
-### Frontend (React)
-- ✨ Modern, responsive design with Tailwind CSS
-- 🌙 Dark mode with system preference detection
-- 🌍 Multi-language support (English & Arabic)
-- 🎨 Beautiful gradient effects and smooth animations
-- 📱 Mobile-friendly with hamburger menu
-- ⚡ Built with Vite for fast development
-- 🎯 Smooth scrolling navigation
-- 📧 Contact form with validation
-- 🔄 RTL support for Arabic
-
-### Backend (Node.js/Express)
-- 🔧 Express.js server
-- 💾 Message storage (in-memory for demo, ready for MongoDB)
-- ✅ Form validation
-- 🛡️ CORS enabled
-- 📊 Message management endpoints
-- 🔍 Admin message viewing
-
-## 📁 Project Structure
-
-```
-portfolio/
-├── src/
-│   ├── components/
-│   │   ├── Navbar.jsx
-│   │   ├── Hero.jsx
-│   │   ├── About.jsx
-│   │   ├── Portfolio.jsx
-│   │   ├── Contact.jsx
-│   │   └── Footer.jsx
-│   ├── context/
-│   │   └── ThemeContext.jsx
-│   ├── i18n/
-│   │   ├── config.js
-│   │   ├── en.json
-│   │   └── ar.json
-│   ├── App.jsx
-│   ├── main.jsx
-│   └── index.css
-├── public/
-│   └── (static files)
-├── server.js
-├── vite.config.js
-├── tailwind.config.js
-├── postcss.config.js
-├── package.json
-├── .env
-├── .env.example
-└── README.md
-```
-
-## 🔧 Setup Instructions
+## Getting Started
 
 ### Prerequisites
-- Node.js (v16 or higher)
+
+- Node.js 18 or newer
 - npm or yarn
 
 ### Installation
 
-1. **Navigate to project directory:**
-   ```bash
-   cd d:\MyWork\portfolio
-   ```
-
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-
-3. **Copy environment variables:**
-   ```bash
-   copy .env.example .env
-   ```
-
-4. **Start the backend server (Terminal 1):**
-   ```bash
-   npm run server
-   ```
-   Or for development with auto-reload:
-   ```bash
-   npm run server:dev
-   ```
-
-5. **Start the React dev server (Terminal 2):**
-   ```bash
-   npm run dev
-   ```
-
-6. **Open in browser:**
-   ```
-   http://localhost:3000
-   ```
-
-## 📖 Available Scripts
-
-### Frontend
-- `npm run dev` - Start Vite dev server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-
-### Backend
-- `npm run server` - Start Express server
-- `npm run server:dev` - Start with nodemon (auto-reload)
-
-## 🌍 Internationalization (i18n)
-
-The portfolio supports multiple languages:
-
-- **English** (en) - Default
-- **Arabic** (ar) - Full RTL support
-
-### Language Files
-- `src/i18n/en.json` - English translations
-- `src/i18n/ar.json` - Arabic translations
-- `src/i18n/config.js` - i18n configuration
-
-### How to Add More Languages
-1. Create a new language file: `src/i18n/[language].json`
-2. Add translations following the existing structure
-3. Update `src/i18n/config.js` to include the new language
-4. Language preferences are saved in localStorage
-
-## 🌙 Dark Mode
-
-Dark mode is automatically implemented with:
-- System preference detection
-- Manual toggle button in navbar
-- Persistent storage in localStorage
-- Smooth transitions between themes
-
-### How it Works
-- Theme is stored in localStorage (`theme` key)
-- System preference is used as fallback
-- CSS class `dark` is added to `<html>` element
-- Tailwind's `dark:` utilities handle styling
-
-## 🎨 Customization
-
-### Update Personal Information
-
-1. **Open `src/i18n/en.json` and `src/i18n/ar.json`**
-2. **Update these sections:**
-   - Hero name and title
-   - About description
-   - Portfolio projects
-   - Contact information
-   - Footer copyright
-
-### Change Colors
-
-Edit `tailwind.config.js` primary and secondary colors:
-
-```js
-colors: {
-  primary: {
-    500: '#6366f1',  // Change this
-    // ...
-  },
-  secondary: {
-    500: '#ec4899',  // And this
-    // ...
-  }
-}
-```
-
-### Add More Projects
-
-Edit `src/i18n/en.json` and `src/i18n/ar.json`:
-
-```json
-"projects": [
-  {
-    "id": 1,
-    "name": "Project Name",
-    "description": "Project description",
-    "tags": ["React", "Tailwind"]
-  }
-]
-```
-
-## 📡 API Endpoints
-
-### Contact Form
-- **POST** `/api/contact`
-  - Body: `{ name, email, message }`
-  - Returns: Confirmation with message ID
-
-### Message Management
-- **GET** `/api/messages` - Get all messages
-- **GET** `/api/messages/:id` - Get specific message
-- **PUT** `/api/messages/:id/read` - Mark as read
-- **DELETE** `/api/messages/:id` - Delete message
-- **GET** `/api/health` - Server health check
-
-## 🗄️ Database Integration
-
-Currently uses in-memory storage. To add MongoDB:
-
-1. **Install Mongoose:**
-   ```bash
-   npm install mongoose
-   ```
-
-2. **Update `server.js`:**
-   - Import and connect to MongoDB
-   - Create message schema
-   - Replace in-memory functions with database queries
-
-3. **Update `.env`:**
-   ```
-   MONGODB_URI=mongodb://localhost:27017/portfolio
-   ```
-
-## 🚀 Deployment
-
-### Deploy Frontend to Vercel
-
-1. Build the project:
-   ```bash
-   npm run build
-   ```
-
-2. Deploy with Vercel CLI or connect GitHub repository
-
-### Deploy Backend to Heroku/Railway
-
-1. Create `Procfile`:
-   ```
-   web: node server.js
-   ```
-
-2. Push to Heroku:
-   ```bash
-   git push heroku main
-   ```
-
-## 🐛 Troubleshooting
-
-### Port already in use
 ```bash
-# Windows - Find process on port 3000/5000
-netstat -ano | findstr :3000
-taskkill /PID <PID> /F
+npm install
 ```
 
-### CORS errors
-- Ensure backend is running on correct port (5000)
-- Check `FRONTEND_URL` in `.env`
-- Verify `vite.config.js` proxy configuration
+### Development
 
-### React not loading
-- Clear browser cache
-- Restart Vite dev server
-- Check console for errors
+```bash
+npm run dev
+```
 
-### Dark mode not working
-- Clear localStorage
-- Check browser DevTools -> Application -> Storage
+Vite prints the local development URL in the terminal (typically `http://localhost:5173`).
 
-### Language not persisting
-- Check if localStorage is enabled
-- Verify `src/i18n/config.js` configuration
+### Production Build
 
-## 📦 Technologies Used
+```bash
+npm run build
+npm run preview
+```
 
-### Frontend
-- **React 18** - UI framework
-- **Vite** - Build tool
-- **Tailwind CSS** - Styling
-- **react-i18next** - Internationalization
-- **Axios** - HTTP client
+## Tech Stack
 
-### Backend
-- **Node.js** - Runtime
-- **Express.js** - Web framework
-- **CORS** - Cross-origin requests
-- **Dotenv** - Environment variables
+- **Frontend Framework:** React 18 with Vite
+- **Styling:** Tailwind CSS with semantic CSS custom properties
+- **Internationalization:** i18next and react-i18next for English/Arabic support
+- **Animations:** Framer Motion for restrained interface transitions
+- **HTTP Client:** Axios for contact form submission
+- **Theme System:** CSS custom properties for light/dark mode with neutral, moody color palette
 
-### Developer Tools
-- **Nodemon** - Auto-reload
-- **PostCSS** - CSS processing
-- **Autoprefixer** - CSS vendor prefixes
+## Features
 
-## 🎯 Performance
+- **Bilingual Support:** Full English and Arabic content with automatic RTL layout for Arabic
+- **Theme System:** Light and dark themes with visitor preference saved locally
+- **Responsive Design:** Optimized for all screen sizes with mobile-first approach
+- **Project Filtering:** Fixed category filters (All, AI, Frontend, Backend, Full-Stack) with multi-category support
+- **Certificate Showcase:** Filterable certificate collection with image preview modal
+- **Contact Form:** Validated form with submission feedback
+- **Accessibility:** Reduced-motion support and semantic HTML
+- **Professional Aesthetic:** Moody, minimal design with neutral color palette (no blue/purple tones)
 
-- ⚡ Optimized Vite bundle
-- 🎨 Tailwind CSS purging
-- 📦 Tree-shaking support
-- 🖼️ Responsive images
-- 🚀 Lazy loading ready
+## Project Structure
 
-## 📱 Browser Support
+```
+myPortfolio/
+├── public/
+│   ├── images/
+│   │   ├── certificates/
+│   │   └── projects/
+│   ├── favicon.svg
+│   └── image.jpg
+├── src/
+│   ├── components/
+│   │   ├── About.jsx
+│   │   ├── Certificates.jsx
+│   │   ├── Contact.jsx
+│   │   ├── Experience.jsx
+│   │   ├── Footer.jsx
+│   │   ├── Hero.jsx
+│   │   ├── Navbar.jsx
+│   │   └── Portfolio.jsx
+│   ├── context/
+│   │   └── ThemeContext.jsx
+│   ├── hooks/
+│   │   └── useFeedback.js
+│   ├── i18n/
+│   │   ├── ar.json
+│   │   ├── certificates.json
+│   │   ├── config.js
+│   │   └── en.json
+│   ├── utils/
+│   │   ├── animations.js
+│   │   ├── haptics.js
+│   │   └── sounds.js
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
+├── docs/
+│   └── architecture.md
+├── index.html
+├── package.json
+├── tailwind.config.js
+├── vite.config.js
+└── README.md
+```
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
+## Content Management
 
-## 🔐 Security Considerations
+### Text Content
 
-- ✅ Input validation on contact form
-- ✅ Email validation
-- ✅ CORS protection
-- ⚠️ Add authentication for admin endpoints
-- ⚠️ Sanitize user inputs before storage
-- ⚠️ Use HTTPS in production
+All user-facing text lives in translation files:
+- `src/i18n/en.json` — English content
+- `src/i18n/ar.json` — Arabic content
 
-## 📚 Future Enhancements
+Keep matching translation keys in both files. Changes to content should be made in both locale files.
 
-- [ ] MongoDB integration
-- [ ] User authentication
-- [ ] Admin dashboard
-- [ ] Email notifications
-- [ ] Blog section with CMS
-- [ ] Project filtering
-- [ ] Google Analytics integration
-- [ ] CDN integration
-- [ ] Advanced animations
-- [ ] Performance monitoring
+### Projects
 
-## 📄 License
+Project data is stored in the translation files under `portfolio.projects`. Each project includes:
+- `id`: Unique identifier
+- `name`: Project title
+- `description`: Project description
+- `tags`: Technology tags array
+- `categories`: Category array (ai, frontend, backend, fullstack)
+- `image`: Path to project image
+- `link`: Live demo URL
 
-MIT
+### Certificates
 
-## 🤝 Contributing
+Certificate records are defined in `src/components/Certificates.jsx`. Each certificate includes:
+- `id`: Unique identifier
+- `name`: Certificate title
+- `issuer`: Issuing organization
+- `date`: Completion date
+- `category`: Category array
+- `credentialId`: Verification ID
+- `credentialUrl`: Verification URL
+- `description`: Certificate description
+- `image`: Path to certificate image
+- `featured`: Boolean for featured status
 
-Feel free to fork, modify, and use for your own portfolio!
+### Skills
 
-## 📞 Support
+Skill categories are defined in `src/components/About.jsx` within the `skillCategories` array.
 
-If you encounter any issues, check the troubleshooting section or review the component files for inline documentation.
+### Images
 
----
+Place image assets in `public/images/` and reference them with root-relative paths:
+- Projects: `/images/projects/filename.jpg`
+- Certificates: `/images/certificates/filename.jpg`
+- Profile: `/image.jpg`
 
-**Version:** 2.0.0  
-**Last Updated:** 2024  
-**Built with:** React + Tailwind CSS + Vite + Express.js
+## Theme Customization
+
+Theme colors and visual patterns are defined in `src/index.css` using CSS custom properties:
+
+### Light Mode Variables
+Defined in `:root` block with warm neutral tones
+
+### Dark Mode Variables
+Defined in `.dark` block with moody charcoal/gunmetal palette and amber accent
+
+Key tokens:
+- `--bg-primary`: Main background
+- `--text-primary`: Primary text color
+- `--accent`: Accent color (amber in dark mode)
+- `--shadow-card`: Card shadow depth
+
+## Contact Form Configuration
+
+The contact section submits to Web3Forms. Configure the service access key in `src/components/Contact.jsx` before deploying publicly.
+
+**Important:** Never commit private credentials to the repository.
+
+## Architecture Documentation
+
+For detailed file-by-file breakdown and architecture explanation, see [`docs/architecture.md`](docs/architecture.md).
+
+## Private Notes
+
+`notes_internal.md` is a private Arabic reference file listed in `.gitignore`. It is not published to GitHub and should remain on the developer's machine only.
+
+## License
+
+© 2026 Adham Yahia. All Rights Reserved.
