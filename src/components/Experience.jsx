@@ -1,5 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 export const Experience = () => {
   const { t } = useTranslation();
@@ -8,6 +10,33 @@ export const Experience = () => {
     ...exp,
     id: index + 1
   }));
+
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: [0.16, 1, 0.3, 1],
+      },
+    },
+  };
 
   return (
     <section id="experience" className="section-shell bg-[var(--bg-primary)] transition-colors duration-300">
@@ -22,11 +51,21 @@ export const Experience = () => {
           </p>
         </div>
 
-        <div className="max-w-[1600px] mx-auto relative">
+        <motion.div
+          ref={ref}
+          className="max-w-[1600px] mx-auto relative"
+          variants={containerVariants}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+        >
           <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-[var(--border-subtle)] -translate-x-1/2 hidden md:block" />
 
           {experiences.map((exp, index) => (
-            <div key={exp.id} className="relative md:grid md:grid-cols-2 md:gap-8 mb-8 last:mb-0">
+            <motion.div
+              key={exp.id}
+              variants={itemVariants}
+              className="relative md:grid md:grid-cols-2 md:gap-8 mb-8 last:mb-0"
+            >
               <div className={`hidden md:block ${index % 2 === 0 ? 'md:col-start-2' : 'md:col-start-1'}`} />
 
               <div className={`absolute left-1/2 top-6 w-3 h-3 rounded-full bg-[var(--accent)] border-2 border-[var(--bg-primary)] -translate-x-1/2 hidden md:block`} />
@@ -58,9 +97,9 @@ export const Experience = () => {
                   ))}
                 </div>
               </article>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

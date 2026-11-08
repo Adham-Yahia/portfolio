@@ -36,89 +36,59 @@
     --shadow-card-hover: 0 12px 32px rgba(0, 0, 0, .06), 0 4px 10px rgba(0, 0, 0, .03);
     --shadow-header: 0 6px 20px rgba(0, 0, 0, .04);
     --shadow-modal: 0 24px 56px rgba(0, 0, 0, .12);
-    --skill-ai: #5a5a5a;
-    --skill-ai-bg: rgba(90, 90, 90, .08);
-    --skill-frontend: #6a5a4a;
-    --skill-frontend-bg: rgba(106, 90, 74, .08);
-    --skill-backend: #4a5a6a;
-    --skill-backend-bg: rgba(74, 90, 106, .08);
-    --skill-tools: #5a5a4a;
-    --skill-tools-bg: rgba(90, 90, 74, .08);
   }
 
   .dark {
-    /* Dark mode — moody, professional charcoal/gunmetal with neutral accents. No blue/purple. */
-    --bg-primary: #1a1a1a;
-    --bg-secondary: #181818;
-    --bg-card: #1e1e1e;
-    --bg-elevated: #202020;
-    --bg-subtle: #1c1c1c;
-    --text-primary: #f0f0f0;
-    --text-secondary: #a0a0a0;
-    --text-muted: #707070;
-    --border-subtle: #2a2a2a;
-    --border-default: #3a3a3a;
-    --border-strong: #4a4a4a;
-    --accent: #d4a574;
-    --accent-hover: #e8b88a;
-    --accent-light: #2a2420;
-    --accent-subtle: rgba(212, 165, 116, .10);
-    --accent-text: #1a1a1a;
-    --btn-primary-bg: #d4a574;
-    --btn-primary-text: #1a1a1a;
-    --btn-primary-border: #d4a574;
-    --btn-primary-hover-bg: #e8b88a;
-    --btn-primary-hover-border: #e8b88a;
-    --btn-secondary-bg: #1a1a1a;
-    --btn-secondary-text: #f0f0f0;
-    --btn-secondary-border: #3a3a3a;
-    --btn-secondary-hover-bg: #202020;
-    --btn-secondary-hover-border: #4a4a4a;
-    --shadow-card: 0 12px 36px rgba(0, 0, 0, .48), 0 1px 0 rgba(255, 255, 255, .02) inset;
-    --shadow-card-hover: 0 20px 52px rgba(0, 0, 0, .64), 0 2px 0 rgba(255, 255, 255, .03) inset;
-    --shadow-header: 0 10px 32px rgba(0, 0, 0, .56);
-    --shadow-modal: 0 32px 80px rgba(0, 0, 0, .72);
-    --skill-ai: #c9a070;
-    --skill-ai-bg: rgba(201, 160, 112, .10);
-    --skill-frontend: #b89060;
-    --skill-frontend-bg: rgba(184, 144, 96, .10);
-    --skill-backend: #909090;
-    --skill-backend-bg: rgba(144, 144, 144, .08);
-    --skill-tools: #808080;
-    --skill-tools-bg: rgba(128, 128, 128, .08);
+    /* Dark mode — sophisticated charcoal/gray palette with muted copper accent. */
+    --bg-primary: #18191B;
+    --bg-secondary: #222427;
+    --bg-card: #26292D;
+    --bg-elevated: #2A2D32;
+    --bg-subtle: #1F2124;
+    --text-primary: #F1F1EF;
+    --text-secondary: #A1A1AA;
+    --text-muted: #71717A;
+    --border-subtle: #2A2D32;
+    --border-default: #3A3D42;
+    --border-strong: #4A4D52;
+    --accent: #C58B5B;
+    --accent-hover: #D49A6A;
+    --accent-light: #2A2623;
+    --accent-subtle: rgba(197, 139, 91, .10);
+    --accent-text: #18191B;
+    --btn-primary-bg: #C58B5B;
+    --btn-primary-text: #18191B;
+    --btn-primary-border: #C58B5B;
+    --btn-primary-hover-bg: #D49A6A;
+    --btn-primary-hover-border: #D49A6A;
+    --btn-secondary-bg: #26292D;
+    --btn-secondary-text: #F1F1EF;
+    --btn-secondary-border: #3A3D42;
+    --btn-secondary-hover-bg: #2A2D32;
+    --btn-secondary-hover-border: #4A4D52;
+    --shadow-card: 0 12px 36px rgba(0, 0, 0, .32), 0 1px 0 rgba(255, 255, 255, .02) inset;
+    --shadow-card-hover: 0 20px 52px rgba(0, 0, 0, .40), 0 2px 0 rgba(255, 255, 255, .03) inset;
+    --shadow-header: 0 10px 32px rgba(0, 0, 0, .36);
+    --shadow-modal: 0 32px 80px rgba(0, 0, 0, .56);
   }
 
   .dark body {
     background: 
-      linear-gradient(135deg, rgba(212, 165, 116, 0.08) 0%, rgba(26, 26, 26, 0.4) 100%),
-      repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 39px,
-        rgba(212, 165, 116, 0.04) 40px,
-        rgba(212, 165, 116, 0.04) 41px
-      ),
-      repeating-linear-gradient(
-        90deg,
-        transparent,
-        transparent 39px,
-        rgba(212, 165, 116, 0.04) 40px,
-        rgba(212, 165, 116, 0.04) 41px
-      ),
-      linear-gradient(180deg, #1a1a1a 0%, #1e1e1e 50%, #1a1a1a 100%);
+      linear-gradient(135deg, rgba(197, 139, 91, 0.06) 0%, rgba(24, 25, 27, 0.3) 100%),
+      linear-gradient(180deg, #18191B 0%, #1F2124 50%, #18191B 100%);
     background-attachment: fixed;
   }
 
   .dark .section-shell:nth-child(2n) {
-    background: linear-gradient(180deg, #1a1a1a 0%, rgba(26, 26, 26, 0.85) 100%);
+    background: linear-gradient(180deg, #18191B 0%, rgba(24, 25, 27, 0.9) 100%);
   }
 
   .dark .section-shell:nth-child(2n+1) {
-    background: linear-gradient(180deg, rgba(26, 26, 26, 0.95) 0%, #1a1a1a 100%);
+    background: linear-gradient(180deg, rgba(24, 25, 27, 0.95) 0%, #18191B 100%);
   }
 
   .dark .section-shell--muted {
-    background: linear-gradient(180deg, rgba(212, 165, 116, 0.06) 0%, #1a1a1a 100%);
+    background: linear-gradient(180deg, rgba(197, 139, 91, 0.04) 0%, #18191B 100%);
   }
 
   html {
@@ -364,6 +334,7 @@
   .skill-card {
     padding: 1.5rem;
     border-radius: 1rem;
+    background: var(--bg-subtle);
   }
 
   .skill-card__title {
@@ -375,6 +346,7 @@
     font-weight: 800;
     letter-spacing: -.025em;
     line-height: 1.2;
+    color: var(--text-primary);
   }
 
   .skill-card__mark {
@@ -382,23 +354,8 @@
     height: 1.25rem;
     border-radius: 999px;
     flex-shrink: 0;
+    background: var(--accent);
   }
-
-  .skill-card--ai .skill-card__title { color: var(--skill-ai); }
-  .skill-card--ai .skill-card__mark { background: var(--skill-ai); }
-  .skill-card--ai { background: linear-gradient(180deg, var(--skill-ai-bg), transparent 46%); }
-
-  .skill-card--frontend .skill-card__title { color: var(--skill-frontend); }
-  .skill-card--frontend .skill-card__mark { background: var(--skill-frontend); }
-  .skill-card--frontend { background: linear-gradient(180deg, var(--skill-frontend-bg), transparent 46%); }
-
-  .skill-card--backend .skill-card__title { color: var(--skill-backend); }
-  .skill-card--backend .skill-card__mark { background: var(--skill-backend); }
-  .skill-card--backend { background: linear-gradient(180deg, var(--skill-backend-bg), transparent 46%); }
-
-  .skill-card--tools .skill-card__title { color: var(--skill-tools); }
-  .skill-card--tools .skill-card__mark { background: var(--skill-tools); }
-  .skill-card--tools { background: linear-gradient(180deg, var(--skill-tools-bg), transparent 46%); }
 
   .media-frame {
     position: relative;

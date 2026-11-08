@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { useInView } from 'react-intersection-observer';
 import useFeedback from '../hooks/useFeedback';
 
 export const Certificates = () => {
@@ -9,6 +10,11 @@ export const Certificates = () => {
   const { triggerClick, triggerHover } = useFeedback();
   const [selectedCategory, setSelectedCategory] = useState('Featured');
   const [preview, setPreview] = useState(null);
+
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
 
   const certificatesData = [
      {
@@ -216,6 +222,28 @@ export const Certificates = () => {
     }
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.4,
+        ease: [0.16, 1, 0.3, 1],
+      },
+    },
+  };
+
   return (
     <section
       id="certificates"
@@ -240,7 +268,7 @@ export const Certificates = () => {
 
         <div className="mb-12 flex flex-wrap gap-2.5 justify-center">
           {categories.map((category) => (
-            <button
+            <motion.button
               key={category}
               type="button"
               onClick={() => {
@@ -249,16 +277,25 @@ export const Certificates = () => {
               }}
               onMouseEnter={triggerHover}
               className={`filter-chip ${selectedCategory === category ? 'is-active' : ''}`}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
             >
               {getCategoryLabel(category)}
-            </button>
+            </motion.button>
           ))}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
+        <motion.div
+          ref={ref}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto"
+          variants={containerVariants}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+        >
           {filteredCertificates.map((cert) => (
-            <article
+            <motion.article
               key={cert.id}
+              variants={itemVariants}
               className="surface-card group relative flex flex-col overflow-hidden rounded-lg"
             >
               {cert.image && (
@@ -276,7 +313,7 @@ export const Certificates = () => {
                     src={cert.image}
                     alt={cert.name}
                     loading="lazy"
-                    className="w-full h-full object-contain rounded-lg"
+                    className="w-full h-full object-contain rounded-lg transition-transform duration-300 group-hover:scale-105"
                     onError={(e) => {
                       e.target.style.display = 'none';
                     }}
@@ -315,19 +352,21 @@ export const Certificates = () => {
                   <span className="text-[10px] font-semibold text-[var(--text-muted)]">
                     {cert.date}
                   </span>
-                  <button
+                  <motion.button
                     type="button"
                     onClick={() => openCredential(cert)}
                     className="flat-button px-3 py-1.5 text-[10px] gap-1"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.98 }}
                   >
                     <span>{t('certificates.viewCredential', 'View Credential')}</span>
                     <span>→</span>
-                  </button>
+                  </motion.button>
                 </div>
               </div>
-            </article>
+            </motion.article>
           ))}
-        </div>
+        </motion.div>
 
         {filteredCertificates.length === 0 && (
           <div className="text-center py-16">
@@ -374,13 +413,15 @@ export const Certificates = () => {
                       {preview.name}
                     </h3>
                   </div>
-                  <button
+                  <motion.button
                     type="button"
                     className="control px-3 py-1.5 text-xs"
                     onClick={() => setPreview(null)}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.98 }}
                   >
                     Close
-                  </button>
+                  </motion.button>
                 </div>
                 <p className="text-sm leading-relaxed text-[var(--text-secondary)]">
                   {preview.description}
@@ -389,14 +430,16 @@ export const Certificates = () => {
                   <span className="font-mono text-[11px] text-[var(--text-secondary)] font-medium">
                     ID: {preview.credentialId}
                   </span>
-                  <button
+                  <motion.button
                     type="button"
                     className="flat-button px-4 py-2.5 text-xs gap-1.5"
                     onClick={() => openCredential(preview)}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.98 }}
                   >
                     <span>{t('certificates.viewCredential', 'View Credential')}</span>
                     <span>→</span>
-                  </button>
+                  </motion.button>
                 </div>
               </div>
             </motion.div>

@@ -1,10 +1,17 @@
 import React, { useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 export const Portfolio = () => {
   const { t } = useTranslation();
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [sortBy, setSortBy] = useState('newest');
+
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
 
   const projects = t('portfolio.projects', { returnObjects: true });
 
@@ -35,6 +42,28 @@ export const Portfolio = () => {
     return filtered;
   }, [projects, selectedCategory, sortBy]);
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.4,
+        ease: [0.16, 1, 0.3, 1],
+      },
+    },
+  };
+
   return (
     <section id="portfolio" className="section-shell bg-[var(--bg-primary)] transition-colors duration-300">
       <div className="section-container">
@@ -48,14 +77,16 @@ export const Portfolio = () => {
         <div className="mb-12 space-y-5">
           <div className="flex flex-wrap gap-2.5 justify-center">
             {categories.map((category) => (
-              <button
+              <motion.button
                 key={category}
                 type="button"
                 onClick={() => setSelectedCategory(category)}
                 className={`filter-chip ${selectedCategory === category ? 'is-active' : ''}`}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
               >
                 {getCategoryLabel(category)}
-              </button>
+              </motion.button>
             ))}
           </div>
 
@@ -71,13 +102,20 @@ export const Portfolio = () => {
           </div>
         </div>
 
-        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <motion.div
+          ref={ref}
+          className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
+          variants={containerVariants}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+        >
           {filteredProjects.map((project) => (
-            <a
+            <motion.a
               key={project.id}
               href={project.link || "https://github.com/Adham-Yahia"}
               target="_blank"
               rel="noopener noreferrer"
+              variants={itemVariants}
               className="surface-card group flex flex-col overflow-hidden rounded-xl hover:border-[var(--border-strong)]"
             >
               <div className="relative overflow-hidden bg-[var(--bg-subtle)] aspect-[16/10]">
@@ -111,7 +149,7 @@ export const Portfolio = () => {
                 <h3 className="mb-2 text-lg font-bold text-[var(--text-primary)] leading-tight">
                   {project.name}
                 </h3>
-                
+
                 <p className="mb-4 flex-1 text-sm leading-relaxed text-[var(--text-secondary)] line-clamp-2">
                   {project.description}
                 </p>
@@ -121,9 +159,9 @@ export const Portfolio = () => {
                   <span aria-hidden="true">→</span>
                 </div>
               </div>
-            </a>
+            </motion.a>
           ))}
-        </div>
+        </motion.div>
 
         {filteredProjects.length === 0 && (
           <div className="text-center py-16">
