@@ -235,6 +235,7 @@ const AnimatedBackground = () => {
       style={{
         zIndex: 1,
         opacity: 0.4,
+        touchAction: 'none',
       }}
     />
   );

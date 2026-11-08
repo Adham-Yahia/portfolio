@@ -60,6 +60,7 @@ const IntroScreen = ({ onStart, onSkip }) => {
             background: isDark
               ? 'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%)'
               : 'linear-gradient(135deg, #f5f4f1 0%, #e8e6e3 50%, #f5f4f1 100%)',
+            touchAction: 'none',
           }}
         >
           {/* 3D Robot Canvas - Centered above text on all screens */}
@@ -67,7 +68,7 @@ const IntroScreen = ({ onStart, onSkip }) => {
             {isWebGLAvailable ? (
               <Canvas
                 camera={{ position: [0, 0, 7], fov: 45 }}
-                style={{ background: 'transparent' }}
+                style={{ background: 'transparent', touchAction: 'none' }}
                 onCreated={({ gl }) => {
                   console.log('[IntroScreen] Canvas created successfully');
                   console.log('[IntroScreen] WebGL renderer:', gl.getContext().getParameter(gl.getContext().VERSION));

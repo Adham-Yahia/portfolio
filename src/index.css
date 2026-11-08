@@ -104,6 +104,8 @@
     color: var(--text-primary);
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     transition: background-color .25s ease, color .25s ease;
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -126,6 +128,7 @@
     background: transparent;
     color: var(--text-primary);
     position: relative;
+    touch-action: pan-y;
   }
 
   .section-shell {
